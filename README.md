@@ -1,6 +1,6 @@
 # Yelyn Yoo — Portfolio
 
-A responsive, framework-free portfolio for GitHub Pages. It highlights cloud-service experience, backend automation, applied machine learning, measurable impact, and selected projects without exposing proprietary company code.
+A responsive, framework-free portfolio for GitHub Pages, styled as a technical document: an impact table, case notes for production work, and short technical write-ups (architecture diagram, formulas, design decisions) for each project. No proprietary company code is shown.
 
 ## Preview locally
 
@@ -26,8 +26,9 @@ GitHub may take several minutes to publish a new site. The official setup guide 
 ## Update content
 
 - Main copy and project details: `index.html`
-- Colors and responsive layout: `styles.css`
-- Theme, navigation, reveal effects, and filters: `script.js`
+- Colors (CSS variables at the top), typography, and layout: `styles.css`
+- Theme toggle and active-section nav: `script.js`
+- CampusLoop retrieval diagram: inline SVG in `index.html` (colors come from CSS variables, so it works in both themes)
 - Downloadable résumé: `assets/Yelyn_Yoo_Resume.pdf`
 - Browser icon: `assets/favicon.svg`
 
@@ -37,4 +38,4 @@ GitHub may take several minutes to publish a new site. The official setup guide 
 - Replace or remove any project links you do not want indexed.
 - After the site URL is known, add an `og:url` meta tag and use the site URL in the JSON-LD `url` field.
 
-No build command or external dependency is required.
+No build step. The only external request is IBM Plex from Google Fonts; system fonts are used if it fails to load.

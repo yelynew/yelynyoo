@@ -1,20 +1,31 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
-    <title>Page not found | Yelyn Yoo</title>
+    <title>Not found — Yelyn Yoo</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif&display=swap"
+    />
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      try {
+        var t = localStorage.getItem("yy-theme");
+        if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <main class="error-page">
-      <div class="error-card">
-        <p class="eyebrow">404 · Page not found</p>
-        <h1>This route does not exist.</h1>
-        <p>The page may have moved, but the rest of the portfolio is ready.</p>
-        <a class="button primary" href="./">Return home</a>
+      <div class="inner">
+        <p class="kicker">HTTP 404</p>
+        <h1>No route matches this path.</h1>
+        <p>The page may have moved. Everything else lives on the <a href="./">home page</a>.</p>
       </div>
     </main>
   </body>
