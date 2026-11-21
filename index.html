@@ -1,23 +1,37 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Yelyn Yoo is a USC Computer Science M.S. student and former NAVER CLOUD engineer building reliable cloud automation, backend tools, and applied machine learning systems."
+      content="Yelyn Yoo — USC Computer Science M.S. student and former NAVER CLOUD engineer. Cloud security automation, backend tooling, retrieval systems, and ML evaluation."
     />
     <meta name="author" content="Yelyn Yoo" />
-    <meta name="theme-color" content="#07111f" />
-    <meta property="og:title" content="Yelyn Yoo | Software Engineer" />
+    <meta name="theme-color" content="#f6f5f1" />
+    <meta property="og:title" content="Yelyn Yoo — Software Engineer" />
     <meta
       property="og:description"
-      content="Cloud automation, backend systems, and applied machine learning."
+      content="Cloud security automation, backend tooling, retrieval systems, and ML evaluation."
     />
     <meta property="og:type" content="website" />
-    <title>Yelyn Yoo | Software Engineer</title>
+    <title>Yelyn Yoo — Software Engineer</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:ital@0;1&display=swap"
+    />
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("yy-theme");
+          if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+        } catch (e) {}
+      })();
+    </script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -26,25 +40,16 @@
         "email": "mailto:yelynyoo@usc.edu",
         "sameAs": ["https://www.linkedin.com/in/yelyn-yoo/"],
         "alumniOf": [
-          {
-            "@type": "CollegeOrUniversity",
-            "name": "Ewha Womans University"
-          },
-          {
-            "@type": "CollegeOrUniversity",
-            "name": "North Dakota State University"
-          }
+          { "@type": "CollegeOrUniversity", "name": "Ewha Womans University" },
+          { "@type": "CollegeOrUniversity", "name": "North Dakota State University" }
         ],
-        "affiliation": {
-          "@type": "CollegeOrUniversity",
-          "name": "University of Southern California"
-        },
+        "affiliation": { "@type": "CollegeOrUniversity", "name": "University of Southern California" },
         "knowsAbout": [
           "Software Engineering",
-          "Cloud Systems",
+          "Cloud Security",
           "Backend Development",
-          "Machine Learning",
-          "Security Automation"
+          "Information Retrieval",
+          "Machine Learning Evaluation"
         ]
       }
     </script>
@@ -52,406 +57,472 @@
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header" id="top">
-      <div class="container nav-wrap">
-        <a class="brand" href="#top" aria-label="Yelyn Yoo home">
-          <span class="brand-mark" aria-hidden="true">YY</span>
-          <span class="brand-name">Yelyn Yoo</span>
-        </a>
-
-        <button
-          class="menu-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="site-nav"
-          aria-label="Open navigation"
-        >
-          <span></span><span></span><span></span>
-        </button>
-
-        <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-          <a href="#about">About</a>
+    <header class="site-header">
+      <div class="wrap header-row">
+        <a class="wordmark" href="#top">Yelyn Yoo</a>
+        <nav class="site-nav" aria-label="Sections">
+          <a href="#impact">Impact</a>
           <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
-          <button class="theme-toggle" type="button" aria-label="Switch color theme">
-            <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="4"></circle>
-              <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path>
-            </svg>
-            <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"></path>
-            </svg>
-          </button>
+          <a href="#stack">Stack</a>
+          <a href="#education">Education</a>
         </nav>
+        <button class="theme-toggle" type="button" aria-label="Toggle color theme">
+          <span class="theme-label">Theme</span>
+        </button>
       </div>
     </header>
 
     <main id="main">
-      <section class="hero section-shell" aria-labelledby="hero-title">
-        <div class="hero-grid container">
-          <div class="hero-copy reveal">
-            <p class="eyebrow"><span class="status-dot"></span>Available for Summer 2027 internships</p>
-            <h1 id="hero-title">
-              I build reliable systems where
-              <span class="gradient-text">cloud, automation, and AI</span> meet.
-            </h1>
-            <p class="hero-lede">
-              Computer Science M.S. student at USC with 4+ years of cloud service experience at
-              NAVER CLOUD. I turn operational problems into tested tools, API-driven workflows,
-              and measurable system improvements.
-            </p>
-            <div class="hero-actions">
-              <a class="button primary" href="#projects">Explore my work</a>
-              <a class="button secondary" href="assets/Yelyn_Yoo_Resume.pdf" download>Download résumé</a>
-            </div>
-            <div class="hero-links" aria-label="Contact links">
-              <a href="mailto:yelynyoo@usc.edu">yelynyoo@usc.edu</a>
-              <span aria-hidden="true">/</span>
-              <a href="https://www.linkedin.com/in/yelyn-yoo/" target="_blank" rel="noreferrer">LinkedIn</a>
-              <span aria-hidden="true">/</span>
-              <span>Los Angeles, CA</span>
-            </div>
-          </div>
-
-          <div class="hero-visual reveal" aria-label="Technical profile summary">
-            <div class="signal-orbit orbit-one"></div>
-            <div class="signal-orbit orbit-two"></div>
-            <div class="terminal-card">
-              <div class="terminal-top">
-                <span></span><span></span><span></span>
-                <p>profile.json</p>
-              </div>
-              <pre><code>{
-  <span class="code-key">"focus"</span>: [
-    <span class="code-value">"backend systems"</span>,
-    <span class="code-value">"AI/ML evaluation"</span>,
-    <span class="code-value">"cloud automation"</span>
-  ],
-  <span class="code-key">"languages"</span>: [
-    <span class="code-value">"Python"</span>, <span class="code-value">"SQL"</span>, <span class="code-value">"Java"</span>, <span class="code-value">"C"</span>
-  ],
-  <span class="code-key">"principle"</span>:
-    <span class="code-value">"measure, validate, improve"</span>
-}</code></pre>
-              <div class="terminal-status">
-                <span class="pulse"></span>
-                <span>systems online</span>
-              </div>
-            </div>
-          </div>
+      <!-- ───────────────────────── Intro ───────────────────────── -->
+      <section class="intro wrap" id="top" aria-labelledby="intro-title">
+        <div class="intro-text">
+          <p class="kicker">Software Engineer · Los Angeles</p>
+          <h1 id="intro-title">
+            I make operational systems smaller, safer, and easier to reason about.
+          </h1>
+          <p class="lede">
+            Four years building on cloud security services at <strong>NAVER CLOUD</strong>, building
+            Python tooling and API-driven workflows for WAF, Anti-DDoS, IDS/IPS and Anti-Virus
+            services used by 1,000+ enterprise customers. Now an M.S. Computer Science student at
+            <strong>USC</strong>, working on retrieval systems and the evaluation of language models.
+          </p>
         </div>
-      </section>
 
-      <section class="metrics-band" aria-label="Selected impact metrics">
-        <div class="container metrics-grid">
-          <article class="metric reveal">
-            <strong>4+ years</strong>
-            <span>cloud service experience</span>
-          </article>
-          <article class="metric reveal">
-            <strong>1,000+</strong>
-            <span>enterprise customers supported</span>
-          </article>
-          <article class="metric reveal">
-            <strong>70–83%</strong>
-            <span>recurring process reduction</span>
-          </article>
-          <article class="metric reveal">
-            <strong>30%</strong>
-            <span>fewer customer inquiries</span>
-          </article>
-        </div>
-      </section>
-
-      <section class="about section-shell" id="about" aria-labelledby="about-title">
-        <div class="container section-grid">
-          <div class="section-heading reveal">
-            <p class="eyebrow">About</p>
-            <h2 id="about-title">Engineering with context, not just code.</h2>
-          </div>
-          <div class="about-content reveal">
-            <p class="large-copy">
-              My strongest work starts with understanding how a system fails, who feels the impact,
-              and which part should be automated. At NAVER CLOUD, that meant tracing production
-              behavior through logs, defining validation and retry paths, and building workflows
-              that removed repetitive operational steps.
-            </p>
-            <p>
-              I now combine that production perspective with graduate study in machine learning.
-              My projects span computer vision, NLP, LLM evaluation, and retrieval-augmented
-              applications—always with an emphasis on measurable behavior and careful validation.
-            </p>
-            <div class="principles" aria-label="Engineering principles">
-              <div><span>01</span><strong>Build for the user</strong><small>Start from the workflow and its constraints.</small></div>
-              <div><span>02</span><strong>Validate the behavior</strong><small>Treat generated output as untrusted until tested.</small></div>
-              <div><span>03</span><strong>Measure the result</strong><small>Use concrete outcomes, not vague improvements.</small></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="experience section-shell alt-section" id="experience" aria-labelledby="experience-title">
-        <div class="container">
-          <div class="section-heading compact reveal">
-            <p class="eyebrow">Experience</p>
-            <h2 id="experience-title">Production perspective, applied hands-on.</h2>
-          </div>
-
-          <div class="timeline">
-            <article class="timeline-item reveal">
-              <div class="timeline-meta">
-                <time datetime="2022-01">2022 — 2026</time>
-                <span>Gyeonggi-do, Korea</span>
-              </div>
-              <div class="timeline-body">
-                <div class="role-heading">
-                  <div>
-                    <h3>Cloud Security Architect</h3>
-                    <p>NAVER CLOUD</p>
-                  </div>
-                  <span class="role-chip">Cloud systems</span>
-                </div>
-                <ul class="impact-list">
-                  <li>
-                    Built and debugged a local Python/Flask QA application that let testers generate
-                    security events through a web interface and inspect resulting service logs.
-                  </li>
-                  <li>
-                    Reduced WAF and Anti-DDoS request processing by 75–83% across 300+ annual cases
-                    using internal APIs, Claude Code, and company-provided MCP tools.
-                  </li>
-                  <li>
-                    Designed input validation, vendor API mapping, sub-account policies, and retry
-                    behavior for IDS, IPS, and Anti-Virus web requests, contributing to 30% fewer inquiries.
-                  </li>
-                  <li>
-                    Reproduced production failures through scenario-based testing and log analysis,
-                    isolated root causes, and documented targeted logic improvements.
-                  </li>
-                </ul>
-                <div class="tag-row" aria-label="NAVER CLOUD technologies">
-                  <span>Python</span><span>Flask</span><span>REST APIs</span><span>Linux</span><span>Jenkins</span><span>MCP</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="timeline-item reveal">
-              <div class="timeline-meta">
-                <time datetime="2021-06">Summer 2021</time>
-                <span>Seoul, Korea</span>
-              </div>
-              <div class="timeline-body">
-                <div class="role-heading">
-                  <div>
-                    <h3>Software Engineer Intern</h3>
-                    <p>Sundo Soft</p>
-                  </div>
-                  <span class="role-chip">Applied ML</span>
-                </div>
-                <ul class="impact-list">
-                  <li>
-                    Improved tourism-review classification accuracy by 15% over the project baseline
-                    by developing and evaluating a BiLSTM model and comparing preprocessing techniques.
-                  </li>
-                  <li>
-                    Built a Selenium-based pipeline for automated, large-scale review collection and
-                    NLP dataset generation.
-                  </li>
-                </ul>
-                <div class="tag-row" aria-label="Sundo Soft technologies">
-                  <span>TensorFlow</span><span>Keras</span><span>BiLSTM</span><span>NLP</span><span>Selenium</span>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="projects section-shell" id="projects" aria-labelledby="projects-title">
-        <div class="container">
-          <div class="projects-head reveal">
-            <div class="section-heading compact">
-              <p class="eyebrow">Selected projects</p>
-              <h2 id="projects-title">Ideas turned into working systems.</h2>
-            </div>
-            <div class="project-filters" aria-label="Filter projects">
-              <button class="filter-button active" type="button" data-filter="all">All</button>
-              <button class="filter-button" type="button" data-filter="ai">AI / ML</button>
-              <button class="filter-button" type="button" data-filter="software">Software</button>
-            </div>
-          </div>
-
-          <div class="project-grid">
-            <article class="project-card featured reveal" data-category="software ai">
-              <div class="project-number">01</div>
-              <div class="project-topline">
-                <span class="project-type">Full-stack + RAG</span>
-                <span>2026</span>
-              </div>
-              <h3>CampusLoop</h3>
-              <p>
-                A Dockerized student carpooling application with ride offers and requests, recurring
-                trips, waitlists, schedule filters, calculated fares, and a locally hosted RAG assistant.
-              </p>
-              <ul class="project-details">
-                <li>Hybrid BM25 and embedding-based retrieval</li>
-                <li>Source-supported answers generated locally with Ollama</li>
-                <li>Persistent ride data with SQLite</li>
-              </ul>
-              <div class="project-footer">
-                <div class="tag-row"><span>Python</span><span>JavaScript</span><span>SQLite</span><span>Docker</span><span>Ollama</span></div>
-                <a class="text-link" href="https://github.com/Orzzzzzn/CampusLoop" target="_blank" rel="noreferrer">
-                  View repository <span aria-hidden="true">↗</span>
-                </a>
-              </div>
-            </article>
-
-            <article class="project-card reveal" data-category="ai">
-              <div class="project-number">02</div>
-              <div class="project-topline">
-                <span class="project-type">Computer vision</span>
-                <span>2020</span>
-              </div>
-              <h3>DEEPT</h3>
-              <p>
-                Deepfake detection system developed by comparing candidate CNN architectures and
-                strengthening the selected model against adversarial inputs.
-              </p>
-              <ul class="project-details">
-                <li>40% accuracy improvement over the project baseline</li>
-                <li>XceptionNet vs. EfficientNet model comparison</li>
-                <li>FGSM adversarial training</li>
-              </ul>
-              <div class="project-footer">
-                <div class="tag-row"><span>PyTorch</span><span>XceptionNet</span><span>FGSM</span></div>
-                <span class="project-award">Korean patent · Two grand prizes</span>
-              </div>
-            </article>
-
-            <article class="project-card reveal" data-category="ai">
-              <div class="project-number">03</div>
-              <div class="project-topline">
-                <span class="project-type">LLM evaluation</span>
-                <span>In progress</span>
-              </div>
-              <h3>Pretraining Data Detection</h3>
-              <p>
-                Reproducing the Min-K% Prob method to evaluate whether text may have appeared in an
-                LLM’s pretraining data without access to the original training corpus.
-              </p>
-              <ul class="project-details">
-                <li>WikiMIA benchmark reproduction</li>
-                <li>Token-probability based membership detection</li>
-                <li>Evaluation-focused graduate coursework</li>
-              </ul>
-              <div class="project-footer">
-                <div class="tag-row"><span>Python</span><span>LLM Evaluation</span><span>WikiMIA</span></div>
-                <span class="project-award">USC Machine Learning</span>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="skills section-shell alt-section" id="skills" aria-labelledby="skills-title">
-        <div class="container section-grid">
-          <div class="section-heading reveal">
-            <p class="eyebrow">Capabilities</p>
-            <h2 id="skills-title">A practical stack for reliable, intelligent software.</h2>
-            <p>
-              I work across implementation, evaluation, automation, and production troubleshooting—
-              with depth in Python and cloud-service workflows.
-            </p>
-          </div>
-          <div class="skills-grid reveal">
-            <article>
-              <h3>Languages</h3>
-              <p>Python · SQL · Java · C · JavaScript</p>
-            </article>
-            <article>
-              <h3>Backend & automation</h3>
-              <p>Flask · REST APIs · Data validation · Error handling · Workflow automation · SQLite</p>
-            </article>
-            <article>
-              <h3>Testing & reliability</h3>
-              <p>Scenario-based testing · Log analysis · Debugging · Root-cause analysis · Jenkins</p>
-            </article>
-            <article>
-              <h3>Machine learning</h3>
-              <p>PyTorch · TensorFlow/Keras · Computer vision · NLP · Model evaluation · Adversarial ML</p>
-            </article>
-            <article>
-              <h3>AI-assisted engineering</h3>
-              <p>Claude Code · MCP-based tools · RAG · BM25 · Embedding retrieval · Ollama</p>
-            </article>
-            <article>
-              <h3>Cloud & systems</h3>
-              <p>AWS · Azure · GCP · NCP · Linux · Docker · Git · GitHub</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="credentials section-shell" aria-labelledby="credentials-title">
-        <div class="container">
-          <div class="section-heading compact reveal">
-            <p class="eyebrow">Education & recognition</p>
-            <h2 id="credentials-title">Built on engineering, security, and machine learning.</h2>
-          </div>
-          <div class="credential-grid">
-            <article class="credential-card reveal">
-              <span>2028</span>
-              <h3>University of Southern California</h3>
-              <p>M.S. in Computer Science · Expected May 2028</p>
-              <small>Machine Learning coursework in progress</small>
-            </article>
-            <article class="credential-card reveal">
-              <span>2022</span>
-              <h3>Ewha Womans University</h3>
-              <p>B.S. in Engineering, Cyber Security</p>
-              <small>Dean’s List 2019–2020 · Algorithms</small>
-            </article>
-            <article class="credential-card reveal">
-              <span>2021</span>
-              <h3>North Dakota State University</h3>
-              <p>Exchange Student in Computer Science</p>
-              <small>Spring 2021</small>
-            </article>
-          </div>
-          <div class="cert-row reveal">
-            <span>AWS Certified Solutions Architect – Associate</span>
-            <span>NCP Professional</span>
-            <span>DEEPT · Two Grand Prizes</span>
-            <span>Secure Coding Competition Award</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact section-shell" id="contact" aria-labelledby="contact-title">
-        <div class="container contact-panel reveal">
+        <dl class="spec">
+          <div><dt>Now</dt><dd>M.S. Computer Science, USC · exp. May 2028</dd></div>
+          <div><dt>Previously</dt><dd>Cloud Security Architect, NAVER CLOUD · 2022–2026</dd></div>
+          <div><dt>Seeking</dt><dd>SWE internship · May–Aug 2027 (12 weeks)</dd></div>
+          <div><dt>Primary</dt><dd>Python · SQL · REST APIs · PyTorch · Linux</dd></div>
           <div>
-            <p class="eyebrow">Let’s build something dependable</p>
-            <h2 id="contact-title">Interested in cloud, backend, or AI systems?</h2>
+            <dt>Contact</dt>
+            <dd>
+              <a href="mailto:yelynyoo@usc.edu">yelynyoo@usc.edu</a> ·
+              <a href="https://www.linkedin.com/in/yelyn-yoo/" target="_blank" rel="noreferrer">LinkedIn</a> ·
+              <a href="assets/Yelyn_Yoo_Resume.pdf" download>Résumé (PDF)</a>
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- ───────────────────────── 01 Impact ───────────────────────── -->
+      <section class="block wrap" id="impact" aria-labelledby="impact-title">
+        <header class="block-head">
+          <span class="block-no">01</span>
+          <h2 id="impact-title">Measured impact</h2>
+          <p class="block-note">Per-case handling time, before and after automation. Volumes are annual.</p>
+        </header>
+
+        <div class="block-body">
+          <div class="table-scroll">
+            <table class="impact">
+              <thead>
+                <tr>
+                  <th scope="col">Workflow</th>
+                  <th scope="col" class="num">Volume</th>
+                  <th scope="col" class="chart-col">Minutes per case <span class="axis">0 ─── 30</span></th>
+                  <th scope="col" class="num">Δ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    WAF / Anti-DDoS request processing
+                    <small>validation, Jira fields, schedule sync</small>
+                  </th>
+                  <td class="num">300+</td>
+                  <td>
+                    <div class="bars" role="img" aria-label="Before: 20 to 30 minutes. After: 5 minutes.">
+                      <div class="bar is-before"><i style="width: 66.67%"></i><i class="range" style="width: 33.33%"></i><em>20–30</em></div>
+                      <div class="bar is-after"><i style="width: 16.67%"></i><em>5</em></div>
+                    </div>
+                  </td>
+                  <td class="num delta">−75–83%</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    Detection → blocking transition
+                    <small>post-approval change requests</small>
+                  </th>
+                  <td class="num">100+</td>
+                  <td>
+                    <div class="bars" role="img" aria-label="Before: 10 minutes. After: 3 minutes.">
+                      <div class="bar is-before"><i style="width: 33.33%"></i><em>10</em></div>
+                      <div class="bar is-after"><i style="width: 10%"></i><em>3</em></div>
+                    </div>
+                  </td>
+                  <td class="num delta">−70%</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    IDS / IPS / Anti-Virus web requests
+                    <small>API failure-behavior specification</small>
+                  </th>
+                  <td class="num">—</td>
+                  <td class="text-cell">Customer inquiries after launch</td>
+                  <td class="num delta">−30%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="footnote">
+            <span class="mono">≈ 75–125 h/yr</span> recovered on request processing alone
+            (300 cases × 15–25 min saved). Manual steps in the detection→blocking flow went from
+            five to zero or one.
+          </p>
+        </div>
+      </section>
+
+      <!-- ───────────────────────── 02 Experience ───────────────────────── -->
+      <section class="block wrap" id="experience" aria-labelledby="experience-title">
+        <header class="block-head">
+          <span class="block-no">02</span>
+          <h2 id="experience-title">Experience</h2>
+          <p class="block-note">Proprietary code is not shown. Diagrams describe structure, not internal systems.</p>
+        </header>
+
+        <div class="block-body">
+          <article class="role">
+            <header class="role-head">
+              <h3>NAVER CLOUD <span>· Cloud Security Architect</span></h3>
+              <p class="meta">Jan 2022 – Sep 2026 · Gyeonggi-do, Korea</p>
+            </header>
             <p>
-              I’m looking for Summer 2027 software engineering opportunities where I can contribute
-              production experience, automation instincts, and an evaluation-first ML mindset.
+              Worked across the operational side of the security products: request handling, customer-facing
+              API behavior, and the tooling QA used to verify detections. Most of the work was finding
+              the repetitive or failure-prone step and replacing it with something testable.
             </p>
+
+            <div class="case">
+              <h4><span class="case-id">A</span> Request-processing workflow</h4>
+              <p>
+                Each WAF / Anti-DDoS request needed its inputs checked, a Jira ticket filled field by
+                field, and an operations schedule updated. I rebuilt this as a reusable AI-assisted
+                workflow on internal APIs, using Claude Code with company-provided MCP tools.
+              </p>
+              <ol class="flow" aria-label="Request processing flow">
+                <li><b>Request</b><span>customer ticket</span></li>
+                <li><b>Validate</b><span>input checks</span></li>
+                <li><b>Populate</b><span>Jira fields</span></li>
+                <li><b>Synchronize</b><span>schedule</span></li>
+              </ol>
+              <p class="result"><span>Result</span> 20–30 min → 5 min per case, 300+ cases/yr.</p>
+            </div>
+
+            <div class="case">
+              <h4><span class="case-id">B</span> Detection → blocking transition</h4>
+              <p>
+                New policies run in detection mode for a 30-day observation period before blocking.
+                After approval, five manual steps produced the change request and schedule. A
+                rules-based workflow now generates both.
+              </p>
+              <ol class="flow" aria-label="Detection to blocking flow">
+                <li><b>Detect</b><span>policy observes</span></li>
+                <li><b>Observe</b><span>30 days</span></li>
+                <li><b>Approve</b><span>rules check</span></li>
+                <li><b>Generate</b><span>CR + schedule</span></li>
+                <li><b>Block</b><span>enforced</span></li>
+              </ol>
+              <p class="result"><span>Result</span> 10 min → 3 min; 5 manual steps → 0–1, 100+ transitions/yr.</p>
+            </div>
+
+            <div class="case">
+              <h4><span class="case-id">C</span> Debugging the event-generation QA tool</h4>
+              <p>
+                I built a local Python/Flask app that lets testers fire security events from a web form
+                and inspect the resulting service logs. One output did not match its input:
+              </p>
+              <ol class="steps">
+                <li><span>Reproduce</span><div>Held all inputs constant and varied one at a time until the mismatch was deterministic.</div></li>
+                <li><span>Trace</span><div>Followed the request through service logs and compared fields at each hop.</div></li>
+                <li><span>Root cause</span><div>The <code>port</code> parameter was silently discarded before the event was built.</div></li>
+                <li><span>Fix</span><div>Corrected the parameter handling in the generation logic.</div></li>
+                <li><span>Verify</span><div>Re-ran the controlled inputs and confirmed expected output end to end.</div></li>
+              </ol>
+            </div>
+
+            <div class="case">
+              <h4><span class="case-id">D</span> Failure behavior for IDS / IPS / Anti-Virus web requests</h4>
+              <p>
+                Defined the API requirements engineers implemented for these products — specifically
+                what happens when a request is malformed, unmappable, or fails downstream.
+              </p>
+              <div class="table-scroll">
+                <table class="spec-table">
+                  <thead><tr><th scope="col">Concern</th><th scope="col">Specified behavior</th></tr></thead>
+                  <tbody>
+                    <tr><td>Malformed input</td><td>Input validation before any vendor call</td></tr>
+                    <tr><td>Vendor schema differences</td><td>Explicit vendor parameter mapping</td></tr>
+                    <tr><td>Organizations with many accounts</td><td>Sub-account policies</td></tr>
+                    <tr><td>Downstream failure</td><td>Enumerated retry cases</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="result"><span>Result</span> 30% fewer customer inquiries after production integration.</p>
+            </div>
+
+            <ul class="tags" aria-label="Technologies">
+              <li>Python</li><li>Flask</li><li>REST APIs</li><li>Linux</li><li>Jenkins</li><li>Jira</li><li>Claude Code</li><li>MCP</li>
+            </ul>
+          </article>
+
+          <article class="role">
+            <header class="role-head">
+              <h3>Sundo Soft <span>· Software Engineer Intern</span></h3>
+              <p class="meta">Summer 2021 · Seoul, Korea</p>
+            </header>
+            <p>
+              Built a Selenium pipeline that collected tourism reviews at scale and turned them into an
+              NLP dataset, then trained a BiLSTM classifier in TensorFlow/Keras. Comparing preprocessing
+              variants against a fixed model was where most of the gain came from:
+              <strong>+15% accuracy</strong> over the project baseline.
+            </p>
+            <ul class="tags" aria-label="Technologies">
+              <li>TensorFlow</li><li>Keras</li><li>BiLSTM</li><li>Selenium</li><li>NLP</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- ───────────────────────── 03 Projects ───────────────────────── -->
+      <section class="block wrap" id="projects" aria-labelledby="projects-title">
+        <header class="block-head">
+          <span class="block-no">03</span>
+          <h2 id="projects-title">Projects</h2>
+          <p class="block-note">Written up as short technical notes: problem, mechanism, evidence.</p>
+        </header>
+
+        <div class="block-body">
+          <!-- CampusLoop -->
+          <article class="project" id="campusloop">
+            <header class="project-head">
+              <h3>CampusLoop</h3>
+              <p class="meta">
+                2026 · ACM@USC Hackathon · team project ·
+                <a href="https://github.com/Orzzzzzn/CampusLoop" target="_blank" rel="noreferrer">source ↗</a>
+              </p>
+            </header>
+            <p>
+              A carpooling app for students: ride offers and requests, recurring trips, per-date waitlists,
+              and fares computed from Google Routes quotes. It ships with a fully local RAG assistant that
+              answers policy and ride questions with citations, running on CPU inside Docker Compose.
+            </p>
+
+            <figure class="diagram">
+              <svg viewBox="0 0 760 252" role="img" aria-labelledby="fig1-t fig1-d">
+                <title id="fig1-t">CampusLoop retrieval pipeline</title>
+                <desc id="fig1-d">Corpus of policy chunks and up to 40 rides is scored with BM25. The top 8 candidates are optionally re-ranked by embedding cosine similarity. Both rankings are fused with reciprocal rank fusion, and the top 3 sources are passed to a local Qwen model with citations.</desc>
+                <defs>
+                  <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                    <path d="M0 0 L10 5 L0 10 z" class="d-head" />
+                  </marker>
+                </defs>
+                <!-- row 1 -->
+                <g class="d-box"><rect x="10" y="18" width="200" height="58" /><text x="22" y="40" class="d-k">CORPUS</text><text x="22" y="62">md chunks + ≤40 rides</text></g>
+                <g class="d-box"><rect x="280" y="18" width="200" height="58" /><text x="292" y="40" class="d-k">BM25</text><text x="292" y="62">k₁ = 1.5 · b = 0.75</text></g>
+                <g class="d-box"><rect x="550" y="18" width="200" height="58" /><text x="562" y="40" class="d-k">CANDIDATES</text><text x="562" y="62">top 8 by lexical score</text></g>
+                <!-- row 2 -->
+                <g class="d-box d-opt"><rect x="550" y="160" width="200" height="58" /><text x="562" y="182" class="d-k">DENSE RE-RANK</text><text x="562" y="204">nomic-embed · cosine</text></g>
+                <g class="d-box d-acc"><rect x="280" y="160" width="200" height="58" /><text x="292" y="182" class="d-k">RRF</text><text x="292" y="204">Σ 1 / (60 + rank)</text></g>
+                <g class="d-box"><rect x="10" y="160" width="200" height="58" /><text x="22" y="182" class="d-k">GENERATE</text><text x="22" y="204">qwen2.5 · cites S1–S3</text></g>
+                <!-- edges -->
+                <line x1="210" y1="47" x2="278" y2="47" class="d-edge" marker-end="url(#arr)" />
+                <line x1="480" y1="47" x2="548" y2="47" class="d-edge" marker-end="url(#arr)" />
+                <line x1="650" y1="76" x2="650" y2="158" class="d-edge" marker-end="url(#arr)" />
+                <line x1="380" y1="76" x2="380" y2="158" class="d-edge" marker-end="url(#arr)" />
+                <line x1="550" y1="189" x2="482" y2="189" class="d-edge" marker-end="url(#arr)" />
+                <line x1="280" y1="189" x2="212" y2="189" class="d-edge" marker-end="url(#arr)" />
+                <text x="390" y="114" class="d-note">lexical ranks</text>
+                <text x="390" y="130" class="d-note">(always)</text>
+                <text x="660" y="114" class="d-note">RAG_SEMANTIC=1</text>
+                <text x="750" y="242" class="d-note" text-anchor="end">vector cache: (sha256(text), model) → SQLite</text>
+              </svg>
+              <figcaption><span>Fig. 1</span> Retrieval path. The dense stage is optional and degrades to lexical-only if the embedding model is unavailable.</figcaption>
+            </figure>
+
+            <pre class="code" aria-label="Reciprocal rank fusion, excerpt from app/rag.py"><code><span class="c"># app/rag.py — reciprocal rank fusion (excerpt)</span>
+lexical = bm25(question, docs)
+ranks   = sorted(range(len(docs)), key=lambda i: lexical[i], reverse=True)
+fusion  = {i: 1 / (60 + r) for r, i in enumerate(ranks) if lexical[i] > 0}
+
+<span class="k">for</span> r, j <span class="k">in</span> enumerate(semantic_order):        <span class="c"># cosine order over top-8</span>
+    i = candidates[j]
+    fusion[i] = fusion.get(i, 0) + 1 / (60 + r)
+
+best = sorted(fusion, key=fusion.get, reverse=True)[:3]   <span class="c"># → S1, S2, S3</span></code></pre>
+
+            <dl class="decisions">
+              <div>
+                <dt>Lexical first</dt>
+                <dd>
+                  Policy Q&amp;A is keyword-heavy, and a second model load is expensive on CPU. Dense
+                  re-ranking is opt-in and only touches the 8 BM25 candidates, never the full corpus.
+                </dd>
+              </div>
+              <div>
+                <dt>Graceful degradation</dt>
+                <dd>
+                  Embedding failure → BM25-only with a warning. Generation failure → return the retrieved
+                  sources without an answer (<code>retrieval_only</code>) rather than an error.
+                </dd>
+              </div>
+              <div>
+                <dt>Bounded concurrency</dt>
+                <dd>
+                  A <code>BoundedSemaphore(2)</code> guards inference; a third simultaneous request gets
+                  HTTP 429 instead of queueing behind a slow CPU model.
+                </dd>
+              </div>
+              <div>
+                <dt>Content-addressed cache</dt>
+                <dd>
+                  Vectors are keyed by <code>(sha256(text), model)</code> in SQLite and embedded in batches
+                  of 16, so unchanged chunks are never re-embedded and switching models can't mix spaces.
+                </dd>
+              </div>
+              <div>
+                <dt>Fare model</dt>
+                <dd>
+                  <span class="math">E(n) = B · (1 + 0.65 (n − 1))</span>, rider price
+                  <span class="math">E(n) / n</span>, where <span class="math">B</span> is the base from a
+                  traffic-aware Routes quote. Decimal arithmetic, half-up rounding to cents; no quote, no booking.
+                </dd>
+              </div>
+              <div>
+                <dt>Container hardening</dt>
+                <dd>
+                  Read-only root filesystem, <code>cap_drop: [ALL]</code>, <code>no-new-privileges</code>,
+                  port bound to 127.0.0.1. Model weights are pulled and warmed by a separate init container.
+                </dd>
+              </div>
+            </dl>
+            <p class="result"><span>Verification</span> 132 tests passing (v2.5.0), including concurrent-approval overbooking and idempotent retries.</p>
+            <ul class="tags" aria-label="Technologies">
+              <li>Python</li><li>JavaScript</li><li>SQLite</li><li>Docker Compose</li><li>Ollama</li><li>BM25</li><li>RRF</li>
+            </ul>
+          </article>
+
+          <!-- DEEPT -->
+          <article class="project" id="deept">
+            <header class="project-head">
+              <h3>DEEPT — deepfake detection</h3>
+              <p class="meta">2020 · Korean patent · two grand prizes</p>
+            </header>
+            <p>
+              A detector for manipulated face video, built to hold up against inputs crafted to fool it.
+              I compared XceptionNet and EfficientNet as backbones, selected XceptionNet, and hardened it with
+              adversarial training using the Fast Gradient Sign Method.
+            </p>
+            <div class="equation" role="math" aria-label="x adversarial equals x plus epsilon times the sign of the gradient of the loss with respect to x">
+              <span>x<sub>adv</sub> = x + ε · sign(∇<sub>x</sub> J(θ, x, y))</span>
+              <small>FGSM: one-step perturbation in the direction that most increases the loss; mixed into training batches.</small>
+            </div>
+            <ol class="flow" aria-label="DEEPT method">
+              <li><b>Compare</b><span>Xception vs. EfficientNet</span></li>
+              <li><b>Select</b><span>XceptionNet</span></li>
+              <li><b>Perturb</b><span>FGSM samples</span></li>
+              <li><b>Retrain</b><span>clean + adversarial</span></li>
+            </ol>
+            <p class="result"><span>Result</span> +40% detection accuracy over the project baseline.</p>
+            <ul class="tags" aria-label="Technologies"><li>PyTorch</li><li>XceptionNet</li><li>EfficientNet</li><li>FGSM</li></ul>
+          </article>
+
+          <!-- Min-K% -->
+          <article class="project" id="mink">
+            <header class="project-head">
+              <h3>Pretraining-data detection with Min-K% Prob</h3>
+              <p class="meta">2026 · USC Machine Learning · <span class="status">in progress</span></p>
+            </header>
+            <p>
+              Given a black-box language model and a passage, was the passage in its pretraining data?
+              Min-K% Prob answers without the training corpus: text the model has seen rarely contains
+              tokens it finds very surprising, so the mean log-likelihood of its <em>least</em> likely tokens
+              is a membership signal. I'm reproducing the method on the WikiMIA benchmark.
+            </p>
+            <div class="equation" role="math" aria-label="Min-K percent of x equals one over E times the sum over the k percent lowest-probability tokens of log p of x i given the preceding tokens">
+              <span>Min-K%(x) = <sup>1</sup>⁄<sub>E</sub> Σ<sub>x<sub>i</sub> ∈ Min-K%(x)</sub> log p(x<sub>i</sub> | x<sub>1</sub>, …, x<sub>i−1</sub>)</span>
+              <small>E = number of tokens in the lowest-k% set. Flag as “seen” when the score exceeds a threshold.</small>
+            </div>
+            <ol class="steps">
+              <li><span>Score</span><div>Compute per-token log-probabilities under the target model.</div></li>
+              <li><span>Select</span><div>Keep the k% lowest-probability tokens.</div></li>
+              <li><span>Aggregate</span><div>Average their log-probabilities into one score per passage.</div></li>
+              <li><span>Evaluate</span><div>Sweep the threshold on WikiMIA member / non-member splits.</div></li>
+            </ol>
+            <ul class="tags" aria-label="Technologies"><li>Python</li><li>WikiMIA</li><li>LLM evaluation</li></ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- ───────────────────────── 04 Stack ───────────────────────── -->
+      <section class="block wrap" id="stack" aria-labelledby="stack-title">
+        <header class="block-head">
+          <span class="block-no">04</span>
+          <h2 id="stack-title">Stack</h2>
+          <p class="block-note">Listed with where each was actually used.</p>
+        </header>
+        <div class="block-body">
+          <div class="table-scroll">
+            <table class="stack">
+              <thead>
+                <tr><th scope="col">Area</th><th scope="col">Tools</th><th scope="col">Used in</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Languages</th><td>Python, SQL, JavaScript, Java, C</td><td>Everything below</td></tr>
+                <tr><th scope="row">Backend</th><td>Flask, REST API design, input validation, retry &amp; error handling</td><td>NAVER CLOUD · CampusLoop</td></tr>
+                <tr><th scope="row">Data</th><td>SQLite, Selenium pipelines, preprocessing</td><td>CampusLoop · Sundo Soft</td></tr>
+                <tr><th scope="row">Retrieval</th><td>BM25, dense embeddings, reciprocal rank fusion, Ollama</td><td>CampusLoop</td></tr>
+                <tr><th scope="row">Machine learning</th><td>PyTorch, TensorFlow/Keras, CNNs, BiLSTM, adversarial training</td><td>DEEPT · Sundo Soft · USC</td></tr>
+                <tr><th scope="row">Reliability</th><td>Scenario-based testing, log analysis, root-cause analysis, Jenkins</td><td>NAVER CLOUD</td></tr>
+                <tr><th scope="row">Automation</th><td>Claude Code, MCP tools, Jira, internal APIs</td><td>NAVER CLOUD</td></tr>
+                <tr><th scope="row">Platforms</th><td>Linux, Docker, Git; AWS, Azure, GCP, NCP</td><td>NAVER CLOUD · CampusLoop</td></tr>
+              </tbody>
+            </table>
           </div>
-          <div class="contact-actions">
-            <a class="button primary" href="mailto:yelynyoo@usc.edu">Email me</a>
-            <a class="button secondary" href="https://www.linkedin.com/in/yelyn-yoo/" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
-          </div>
+        </div>
+      </section>
+
+      <!-- ───────────────────────── 05 Education ───────────────────────── -->
+      <section class="block wrap" id="education" aria-labelledby="education-title">
+        <header class="block-head">
+          <span class="block-no">05</span>
+          <h2 id="education-title">Education &amp; recognition</h2>
+        </header>
+        <div class="block-body">
+          <ul class="ledger">
+            <li>
+              <span class="when">exp. 2028</span>
+              <div><strong>University of Southern California</strong> — M.S. Computer Science<small>Viterbi School of Engineering · Machine Learning (in progress)</small></div>
+            </li>
+            <li>
+              <span class="when">2022</span>
+              <div><strong>Ewha Womans University</strong> — B.S. Engineering, Cyber Security<small>Dean’s List 2019–2020 · Algorithms</small></div>
+            </li>
+            <li>
+              <span class="when">Spring 2021</span>
+              <div><strong>North Dakota State University</strong> — Exchange, Computer Science</div>
+            </li>
+          </ul>
+          <ul class="ledger compact">
+            <li><span class="when">2022</span><div>AWS Certified Solutions Architect – Associate</div></li>
+            <li><span class="when">2022</span><div>NCP Professional</div></li>
+            <li><span class="when">2020</span><div>DEEPT — Korean patent, two grand prizes</div></li>
+            <li><span class="when">—</span><div>Secure Coding Competition award</div></li>
+          </ul>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        <p>Designed and built by Yelyn Yoo.</p>
-        <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+    <footer class="site-footer wrap">
+      <div>
+        <p class="footer-lead">Open to Summer 2027 software engineering internships.</p>
+        <p>
+          <a href="mailto:yelynyoo@usc.edu">yelynyoo@usc.edu</a> ·
+          <a href="https://www.linkedin.com/in/yelyn-yoo/" target="_blank" rel="noreferrer">LinkedIn</a> ·
+          <a href="assets/Yelyn_Yoo_Resume.pdf" download>Résumé</a>
+        </p>
       </div>
+      <p class="colophon">Hand-written HTML &amp; CSS. No framework, no tracking. Set in IBM Plex.</p>
     </footer>
 
     <script src="script.js"></script>

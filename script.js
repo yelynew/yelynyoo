@@ -1,120 +1,55 @@
+// Theme toggle (follows the OS until the visitor picks one) and
+// active-section highlighting in the nav. Nothing else.
+
 const root = document.documentElement;
-const header = document.querySelector(".site-header");
-const themeToggle = document.querySelector(".theme-toggle");
-const menuToggle = document.querySelector(".menu-toggle");
-const siteNav = document.querySelector(".site-nav");
-const navLinks = [...document.querySelectorAll('.site-nav a[href^="#"]')];
-const filterButtons = [...document.querySelectorAll(".filter-button")];
-const projectCards = [...document.querySelectorAll(".project-card")];
+const toggle = document.querySelector(".theme-toggle");
+const label = document.querySelector(".theme-label");
+const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
 
-const storedTheme = localStorage.getItem("yelyn-theme");
-const preferredTheme = window.matchMedia("(prefers-color-scheme: light)").matches
-  ? "light"
-  : "dark";
-
-function applyTheme(theme) {
-  root.dataset.theme = theme;
-  localStorage.setItem("yelyn-theme", theme);
-  const nextTheme = theme === "dark" ? "light" : "dark";
-  themeToggle?.setAttribute("aria-label", `Switch to ${nextTheme} theme`);
-  document.querySelector('meta[name="theme-color"]')?.setAttribute(
-    "content",
-    theme === "dark" ? "#07111f" : "#f6f9fc"
-  );
+function currentTheme() {
+  return root.dataset.theme || (systemDark.matches ? "dark" : "light");
 }
 
-applyTheme(storedTheme || preferredTheme);
-
-themeToggle?.addEventListener("click", () => {
-  applyTheme(root.dataset.theme === "dark" ? "light" : "dark");
-});
-
-function closeMenu() {
-  document.body.classList.remove("menu-open");
-  menuToggle?.setAttribute("aria-expanded", "false");
-  menuToggle?.setAttribute("aria-label", "Open navigation");
+function syncThemeUI() {
+  const theme = currentTheme();
+  const next = theme === "dark" ? "light" : "dark";
+  if (label) label.textContent = next === "dark" ? "Dark" : "Light";
+  toggle?.setAttribute("aria-label", `Switch to ${next} theme`);
+  document
+    .querySelector('meta[name="theme-color"]')
+    ?.setAttribute("content", theme === "dark" ? "#131312" : "#f6f5f1");
 }
 
-menuToggle?.addEventListener("click", () => {
-  const isOpen = document.body.classList.toggle("menu-open");
-  menuToggle.setAttribute("aria-expanded", String(Boolean(isOpen)));
-  menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+toggle?.addEventListener("click", () => {
+  const next = currentTheme() === "dark" ? "light" : "dark";
+  root.dataset.theme = next;
+  try {
+    localStorage.setItem("yy-theme", next);
+  } catch (e) {
+    /* storage unavailable — theme still applies for this visit */
+  }
+  syncThemeUI();
 });
 
-navLinks.forEach((link) => link.addEventListener("click", closeMenu));
+systemDark.addEventListener?.("change", syncThemeUI);
+syncThemeUI();
 
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") closeMenu();
-});
+// Active section in nav
+const links = [...document.querySelectorAll('.site-nav a[href^="#"]')];
+const sections = links
+  .map((a) => document.querySelector(a.getAttribute("href")))
+  .filter(Boolean);
 
-window.addEventListener(
-  "scroll",
-  () => header?.classList.toggle("scrolled", window.scrollY > 12),
-  { passive: true }
-);
-
-filterButtons.forEach((button) => {
-  button.setAttribute("aria-pressed", String(button.classList.contains("active")));
-  button.addEventListener("click", () => {
-    const selected = button.dataset.filter;
-
-    filterButtons.forEach((item) => {
-      const active = item === button;
-      item.classList.toggle("active", active);
-      item.setAttribute("aria-pressed", String(active));
-    });
-
-    projectCards.forEach((card) => {
-      const categories = card.dataset.category?.split(" ") || [];
-      const visible = selected === "all" || categories.includes(selected);
-      card.classList.toggle("filtered-out", !visible);
-      card.setAttribute("aria-hidden", String(!visible));
-    });
-  });
-});
-
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const revealItems = [...document.querySelectorAll(".reveal")];
-
-if (reducedMotion || !("IntersectionObserver" in window)) {
-  revealItems.forEach((item) => item.classList.add("visible"));
-} else {
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
+if ("IntersectionObserver" in window && sections.length) {
+  const observer = new IntersectionObserver(
+    (entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
+        const id = `#${entry.target.id}`;
+        links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === id));
       });
     },
-    { threshold: 0.12, rootMargin: "0px 0px -32px" }
+    { rootMargin: "-35% 0px -60% 0px" }
   );
-
-  revealItems.forEach((item, index) => {
-    item.style.setProperty("--reveal-delay", `${Math.min(index % 4, 3) * 70}ms`);
-    revealObserver.observe(item);
-  });
-}
-
-const sections = [...document.querySelectorAll("main section[id]")];
-
-if ("IntersectionObserver" in window) {
-  const sectionObserver = new IntersectionObserver(
-    (entries) => {
-      const visibleSection = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-      if (!visibleSection) return;
-      navLinks.forEach((link) => {
-        link.classList.toggle(
-          "active",
-          link.getAttribute("href") === `#${visibleSection.target.id}`
-        );
-      });
-    },
-    { rootMargin: "-30% 0px -55%", threshold: [0.05, 0.2, 0.5] }
-  );
-
-  sections.forEach((section) => sectionObserver.observe(section));
+  sections.forEach((s) => observer.observe(s));
 }
