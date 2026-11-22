@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta
       name="description"
       content="Yelyn Yoo — USC Computer Science M.S. student and former NAVER CLOUD engineer. Cloud security automation, backend tooling, retrieval systems, and ML evaluation."
@@ -17,6 +17,11 @@
     <meta property="og:type" content="website" />
     <title>Yelyn Yoo — Software Engineer</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Yelyn Yoo" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -38,7 +43,7 @@
         "@type": "Person",
         "name": "Yelyn Yoo",
         "email": "mailto:yelynyoo@usc.edu",
-        "sameAs": ["https://www.linkedin.com/in/yelyn-yoo/"],
+        "sameAs": ["https://www.linkedin.com/in/yelyn-yoo/", "https://github.com/yelynew"],
         "alumniOf": [
           { "@type": "CollegeOrUniversity", "name": "Ewha Womans University" },
           { "@type": "CollegeOrUniversity", "name": "North Dakota State University" }
@@ -62,44 +67,80 @@
         <a class="wordmark" href="#top">Yelyn Yoo</a>
         <nav class="site-nav" aria-label="Sections">
           <a href="#impact">Impact</a>
+          <a href="#ml">ML</a>
           <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
           <a href="#stack">Stack</a>
           <a href="#education">Education</a>
         </nav>
+        <a class="header-cv" href="assets/Yelyn_Yoo_Resume.pdf" download>Résumé ↓</a>
         <button class="theme-toggle" type="button" aria-label="Toggle color theme">
           <span class="theme-label">Theme</span>
         </button>
       </div>
     </header>
 
+    <nav class="tabbar" aria-label="Quick navigation">
+      <a href="#top">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z" /></svg>
+        <span>Home</span>
+      </a>
+      <a href="#ml">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="7" r="2" /><circle cx="6" cy="17" r="2" /><circle cx="18" cy="12" r="2" /><path d="M8 7.5 16 11.5M8 16.5 16 12.5" /></svg>
+        <span>ML</span>
+      </a>
+      <a href="#experience">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="7.5" width="17" height="12" rx="1.5" /><path d="M9 7.5V5h6v2.5M3.5 12.5h17" /></svg>
+        <span>Work</span>
+      </a>
+      <a href="#projects">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-5 4 5 4M16 8l5 4-5 4M14 5l-4 14" /></svg>
+        <span>Projects</span>
+      </a>
+      <a class="tab-cv" href="assets/Yelyn_Yoo_Resume.pdf" download>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 20h14" /></svg>
+        <span>Résumé</span>
+      </a>
+    </nav>
+
     <main id="main">
       <!-- ───────────────────────── Intro ───────────────────────── -->
       <section class="intro wrap" id="top" aria-labelledby="intro-title">
         <div class="intro-text">
-          <p class="kicker">Software Engineer · Los Angeles</p>
+          <p class="kicker">Software Engineer · Machine Learning · Los Angeles</p>
           <h1 id="intro-title">
             Most of my best work has been deleting steps.
           </h1>
           <p class="lede">
             Four years on cloud security services at <strong>NAVER CLOUD</strong>, building
             Python tooling and API-driven workflows for WAF, Anti-DDoS, IDS/IPS and Anti-Virus
-            services used by 1,000+ enterprise customers. Now an M.S. Computer Science student at
-            <strong>USC</strong>, building routing and retrieval systems and studying how to evaluate language models.
+            services used by 1,000+ enterprise customers and $8M+ in annual revenue. I've trained and evaluated vision and NLP models
+            since 2020, from adversarially trained deepfake detectors to BiLSTM text classifiers. Now an
+            M.S. Computer Science student at <strong>USC</strong>, working on retrieval, LLM grounding, and
+            how to tell what a language model memorized.
           </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="assets/Yelyn_Yoo_Resume.pdf" download>
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M3 13h10" /></svg>
+              Download résumé <span class="btn-meta">PDF</span>
+            </a>
+            <a class="btn" href="https://github.com/yelynew" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a class="btn" href="https://www.linkedin.com/in/yelyn-yoo/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+            <a class="btn" href="mailto:yelynyoo@usc.edu">Email</a>
+          </div>
         </div>
 
         <dl class="spec">
           <div><dt>Now</dt><dd>M.S. Computer Science, USC · exp. May 2028</dd></div>
           <div><dt>Previously</dt><dd>Cloud Security Architect, NAVER CLOUD · 2022–2026</dd></div>
           <div><dt>Seeking</dt><dd>SWE internship · May–Aug 2027 (12 weeks)</dd></div>
-          <div><dt>Primary</dt><dd>Python · SQL · REST APIs · PyTorch · Linux</dd></div>
+          <div><dt>Engineering</dt><dd>Python · SQL · REST APIs · Linux · Docker</dd></div>
+          <div><dt>ML</dt><dd>PyTorch · Keras · scikit-learn · RAG · LLM evaluation</dd></div>
           <div>
             <dt>Contact</dt>
             <dd>
               <a href="mailto:yelynyoo@usc.edu">yelynyoo@usc.edu</a> ·
-              <a href="https://www.linkedin.com/in/yelyn-yoo/" target="_blank" rel="noreferrer">LinkedIn</a> ·
-              <a href="assets/Yelyn_Yoo_Resume.pdf" download>Résumé (PDF)</a>
+              <a href="https://github.com/yelynew" target="_blank" rel="noreferrer">github.com/yelynew</a>
             </dd>
           </div>
         </dl>
@@ -173,10 +214,85 @@
         </div>
       </section>
 
-      <!-- ───────────────────────── 02 Experience ───────────────────────── -->
-      <section class="block wrap" id="experience" aria-labelledby="experience-title">
+      <!-- ───────────────────────── 02 Machine learning ───────────────────────── -->
+      <section class="block wrap" id="ml" aria-labelledby="ml-title">
         <header class="block-head">
           <span class="block-no">02</span>
+          <h2 id="ml-title">Machine learning</h2>
+          <p class="block-note">Models I've built, each with how it was measured. Details in Projects and Experience.</p>
+        </header>
+
+        <div class="block-body">
+          <div class="table-scroll">
+            <table class="ml">
+              <thead>
+                <tr>
+                  <th scope="col">Problem</th>
+                  <th scope="col">Method</th>
+                  <th scope="col">Evaluation</th>
+                  <th scope="col" class="num">Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Was this text in an LLM's pretraining data?<small><a href="#mink">Min-K% Prob</a> · USC, 2026</small></th>
+                  <td>Mean log-likelihood of the k% least likely tokens as a membership score</td>
+                  <td>AUC / TPR on 542 WikiMIA examples, two Pythia models, vs. perplexity, zlib and reference-model baselines</td>
+                  <td class="num muted">in progress</td>
+                </tr>
+                <tr>
+                  <th scope="row">Grounded answers from a local LLM<small><a href="#campusloop">CampusLoop</a> · 2026</small></th>
+                  <td>BM25 + nomic-embed re-rank, reciprocal rank fusion, qwen2.5 with citations</td>
+                  <td>Top-3 cited sources; falls back to lexical-only or sources-only</td>
+                  <td class="num">132 tests</td>
+                </tr>
+                <tr>
+                  <th scope="row">Deepfake detection under adversarial input<small><a href="#deept">DEEPT</a> · 2020</small></th>
+                  <td>XceptionNet vs. EfficientNet backbones; FGSM adversarial training</td>
+                  <td>Detection accuracy vs. project baseline</td>
+                  <td class="num delta">+40%</td>
+                </tr>
+                <tr>
+                  <th scope="row">Korean tourism-review classification<small><a href="#experience">Sundo Soft</a> · 2021</small></th>
+                  <td>BiLSTM (Keras); Mecab, custom-dictionary Mecab and SOYNLP tokenizers compared</td>
+                  <td>Accuracy vs. project baseline on a Selenium-collected dataset</td>
+                  <td class="num delta">+15%</td>
+                </tr>
+                <tr>
+                  <th scope="row">Biometric recognition and template protection<small><a href="https://github.com/yelynew/Biological-authentication-security-and-machine-learning" target="_blank" rel="noreferrer">University coursework</a> · 2021</small></th>
+                  <td>PCA eigenfaces and eigen-iris; fingerprint minutiae; fuzzy vault</td>
+                  <td>Identification accuracy; FAR / FRR for verification</td>
+                  <td class="num">92.7% face<br />96.3% iris</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <dl class="decisions themes">
+            <div>
+              <dt>Evaluation first</dt>
+              <dd>Results are stated against a baseline or a metric, not as impressions. Min-K% is a study of evaluation itself: measuring what a model memorized.</dd>
+            </div>
+            <div>
+              <dt>Adversarial by default</dt>
+              <dd>A security background shapes the ML: FGSM-hardened detectors, biometric false-accept rates, and model output treated as untrusted until checked.</dd>
+            </div>
+            <div>
+              <dt>Grounding over fluency</dt>
+              <dd>LLM features answer only from retrieved, cited sources and degrade to “here are the sources” rather than guessing.</dd>
+            </div>
+            <div>
+              <dt>Data work included</dt>
+              <dd>Collected the review dataset with Selenium and compared Korean tokenizers before tuning the model.</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ───────────────────────── 03 Experience ───────────────────────── -->
+      <section class="block wrap" id="experience" aria-labelledby="experience-title">
+        <header class="block-head">
+          <span class="block-no">03</span>
           <h2 id="experience-title">Experience</h2>
           <p class="block-note">Proprietary code is not shown. Diagrams describe structure, not internal systems.</p>
         </header>
@@ -188,13 +304,34 @@
               <p class="meta">Jan 2022 – Sep 2026 · Gyeonggi-do, Korea</p>
             </header>
             <p>
-              Worked across the operational side of the security products: request handling, customer-facing
-              API behavior, and the tooling QA used to verify detections. Most of the work was finding
-              the repetitive or failure-prone step and replacing it with something testable.
+              Worked across the security product line (WAF, Anti-DDoS, IDS/IPS, Anti-Virus), which serves
+              1,000+ enterprise customers and $8M+ in annual revenue: service architecture, request handling,
+              customer-facing API behavior, and the tooling QA used to verify detections. Most of the work was
+              finding the repetitive or failure-prone step and replacing it with something testable.
             </p>
 
             <div class="case">
-              <h4><span class="case-id">A</span> Processing WAF / Anti-DDoS service applications</h4>
+              <h4><span class="case-id">A</span> Service redundancy and reliability</h4>
+              <p>
+                Designed how the five security services stay up through failures and deployments, and kept
+                their code and servers under regular vulnerability checks.
+              </p>
+              <div class="table-scroll">
+                <table class="spec-table">
+                  <thead><tr><th scope="col">Area</th><th scope="col">What I did</th></tr></thead>
+                  <tbody>
+                    <tr><td>Server redundancy</td><td>Active-standby redundancy for WAF, Anti-Virus, IPS, IDS and Anti-DDoS</td></tr>
+                    <tr><td>Traffic</td><td>Active-active GSLB, supporting zero-downtime deployments</td></tr>
+                    <tr><td>Lifecycle</td><td>OS end-of-life responses and hardware redundancy, planned with systems engineers</td></tr>
+                    <tr><td>Vulnerability checks</td><td>On-demand Jenkins vulnerability scans across 7 GitHub repositories; CCE/CVE assessments</td></tr>
+                    <tr><td>Releases</td><td>Supported selected Linux releases with internal tooling</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="case">
+              <h4><span class="case-id">B</span> Processing WAF / Anti-DDoS service applications</h4>
               <p>
                 Customers sign up for WAF and Anti-DDoS through an application form, which is then
                 processed internally: the form's inputs checked, a Jira ticket filled field by field, and
@@ -202,17 +339,43 @@
                 reusable AI-assisted workflow on internal APIs, using Claude Code with company-provided
                 MCP tools.
               </p>
-              <ol class="flow" aria-label="Application processing flow">
-                <li><b>Receive</b><span>application form</span></li>
-                <li><b>Validate</b><span>input checks</span></li>
-                <li><b>Populate</b><span>Jira fields</span></li>
-                <li><b>Synchronize</b><span>schedule</span></li>
-              </ol>
+              <figure class="diagram">
+                <svg viewBox="0 0 760 290" role="img" aria-labelledby="fig-a-t fig-a-d">
+                  <title id="fig-a-t">AI-assisted application workflow</title>
+                  <desc id="fig-a-d">An engineer runs a reusable Claude Code workflow on a WAF or Anti-DDoS application. Claude Code calls company-provided MCP tools, which reach internal APIs to validate inputs, populate Jira fields, and synchronize the schedule. Handling time drops from 20 to 30 minutes to 5 minutes.</desc>
+                  <defs>
+                    <marker id="arr-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                      <path d="M0 0 L10 5 L0 10 z" class="d-head" />
+                    </marker>
+                  </defs>
+                  <g class="d-box"><rect x="10" y="101" width="140" height="58" /><text x="22" y="123" class="d-k">APPLICATION</text><text x="22" y="145">WAF · Anti-DDoS</text></g>
+                  <g class="d-box d-acc"><rect x="190" y="101" width="160" height="58" /><text x="202" y="123" class="d-k">CLAUDE CODE</text><text x="202" y="145">reusable workflow</text></g>
+                  <g class="d-box"><rect x="385" y="101" width="150" height="58" /><text x="397" y="123" class="d-k">MCP TOOLS</text><text x="397" y="145">company-provided</text></g>
+                  <g class="d-box"><rect x="590" y="20" width="160" height="58" /><text x="602" y="42" class="d-k">VALIDATE</text><text x="602" y="64">inputs · API</text></g>
+                  <g class="d-box"><rect x="590" y="101" width="160" height="58" /><text x="602" y="123" class="d-k">JIRA</text><text x="602" y="145">populate fields</text></g>
+                  <g class="d-box"><rect x="590" y="182" width="160" height="58" /><text x="602" y="204" class="d-k">SCHEDULE</text><text x="602" y="226">synchronize</text></g>
+                  <line x1="150" y1="130" x2="188" y2="130" class="d-edge" marker-end="url(#arr-a)" />
+                  <line x1="350" y1="130" x2="383" y2="130" class="d-edge" marker-end="url(#arr-a)" />
+                  <path d="M535 130 H560 V49 H588" class="d-edge" fill="none" marker-end="url(#arr-a)" />
+                  <line x1="560" y1="130" x2="588" y2="130" class="d-edge" marker-end="url(#arr-a)" />
+                  <path d="M560 130 V211 H588" class="d-edge" fill="none" marker-end="url(#arr-a)" />
+                  <text x="202" y="182" class="d-note">run by an engineer</text>
+                  <text x="397" y="182" class="d-note">internal APIs</text>
+                  <!-- before / after -->
+                  <text x="10" y="266" class="d-note">BEFORE</text>
+                  <rect x="70" y="257" width="240" height="11" class="d-bar-before" />
+                  <text x="318" y="267" class="d-note">20–30 min</text>
+                  <text x="400" y="266" class="d-note">AFTER</text>
+                  <rect x="452" y="257" width="48" height="11" class="d-bar-after" />
+                  <text x="508" y="267" class="d-note d-strong">5 min · −75–83%</text>
+                </svg>
+                <figcaption><span>Fig. B</span> One reusable workflow replaces hand-filling three systems per application. Bars share a scale.</figcaption>
+              </figure>
               <p class="result"><span>Result</span> 20–30 min → 5 min per application, 300+ applications/yr.</p>
             </div>
 
             <div class="case">
-              <h4><span class="case-id">B</span> Detect → block mode switches</h4>
+              <h4><span class="case-id">C</span> Detect → block mode switches</h4>
               <p>
                 New policies run in detection mode for a 30-day observation period before they switch to
                 blocking mode. After approval, five manual steps produced the change request and its
@@ -229,22 +392,24 @@
             </div>
 
             <div class="case">
-              <h4><span class="case-id">C</span> Debugging the event-generation QA tool</h4>
+              <h4><span class="case-id">D</span> Debugging the event-generation QA tool</h4>
               <p>
-                I built a local Python/Flask app that lets testers fire security events from a web form
-                and inspect the resulting service logs. One output did not match its input:
+                I built a local Python/Flask app, with AI assistance, that lets testers fire security events
+                from a web form and inspect the resulting service logs. One output did not match its input,
+                and the defect turned out to be in AI-generated code:
               </p>
               <ol class="steps">
                 <li><span>Reproduce</span><div>Held all inputs constant and varied one at a time until the mismatch was deterministic.</div></li>
                 <li><span>Trace</span><div>Followed the request through service logs and compared fields at each hop.</div></li>
-                <li><span>Root cause</span><div>The <code>port</code> parameter was silently discarded before the event was built.</div></li>
+                <li><span>Root cause</span><div>An AI-generated feature silently discarded the entered <code>port</code> value before the event was built.</div></li>
                 <li><span>Fix</span><div>Corrected the parameter handling in the generation logic.</div></li>
                 <li><span>Verify</span><div>Re-ran the controlled inputs and confirmed expected output end to end.</div></li>
               </ol>
+              <p class="result"><span>Takeaway</span> Generated code gets the same controlled tests and log checks as anything else before it ships.</p>
             </div>
 
             <div class="case">
-              <h4><span class="case-id">D</span> Failure behavior for IDS / IPS / Anti-Virus web requests</h4>
+              <h4><span class="case-id">E</span> Failure behavior for IDS / IPS / Anti-Virus web requests</h4>
               <p>
                 Defined the API requirements engineers implemented for these products — specifically
                 what happens when a request is malformed, unmappable, or fails downstream.
@@ -276,7 +441,8 @@
             <p>
               Built a Selenium pipeline that collected tourism reviews at scale and turned them into an
               NLP dataset, then trained a BiLSTM classifier in TensorFlow/Keras. Comparing preprocessing
-              variants against a fixed model was where most of the gain came from:
+              variants against a fixed model, including Korean tokenizers (Mecab, Mecab with a custom
+              dictionary, SOYNLP), was where most of the gain came from:
               <strong>+15% accuracy</strong> over the project baseline.
             </p>
             <ul class="tags" aria-label="Technologies">
@@ -289,7 +455,7 @@
       <!-- ───────────────────────── 03 Projects ───────────────────────── -->
       <section class="block wrap" id="projects" aria-labelledby="projects-title">
         <header class="block-head">
-          <span class="block-no">03</span>
+          <span class="block-no">04</span>
           <h2 id="projects-title">Projects</h2>
           <p class="block-note">Short technical notes: problem, mechanism, evidence. Team projects say which part was mine.</p>
         </header>
@@ -538,6 +704,12 @@ best = sorted(fusion, key=fusion.get, reverse=True)[:3]   <span class="c"># → 
                 </dd>
               </div>
             </dl>
+            <h4 class="sub">My part</h4>
+            <ul class="contrib">
+              <li><span>Backend</span><div>SQLite-backed ride data and JSON REST endpoints.</div></li>
+              <li><span>RAG assistant</span><div>Locally hosted Ollama / BM25 assistant with source-cited answers.</div></li>
+              <li><span>Features</span><div>Recurring rides and a demo mode, with tests.</div></li>
+            </ul>
             <p class="result"><span>Verification</span> 132 tests passing (v2.5.0), including concurrent-approval overbooking and idempotent retries.</p>
             <ul class="tags" aria-label="Technologies">
               <li>Python</li><li>JavaScript</li><li>SQLite</li><li>Docker Compose</li><li>Ollama</li><li>BM25</li><li>RRF</li>
@@ -555,7 +727,8 @@ best = sorted(fusion, key=fusion.get, reverse=True)[:3]   <span class="c"># → 
               Given a black-box language model and a passage, was the passage in its pretraining data?
               Min-K% Prob answers without the training corpus: text the model has seen rarely contains
               tokens it finds very surprising, so the mean log-likelihood of its <em>least</em> likely tokens
-              is a membership signal. I'm reproducing the method on the WikiMIA benchmark.
+              is a membership signal. I reproduced the method on 542 WikiMIA examples and benchmarked it against
+              three baselines across two Pythia models.
             </p>
             <div class="equation" role="math" aria-label="Min-K percent of x equals one over E times the sum over the k percent lowest-probability tokens of log p of x i given the preceding tokens">
               <span>Min-K%(x) = <sup>1</sup>⁄<sub>E</sub> Σ<sub>x<sub>i</sub> ∈ Min-K%(x)</sub> log p(x<sub>i</sub> | x<sub>1</sub>, …, x<sub>i−1</sub>)</span>
@@ -565,9 +738,15 @@ best = sorted(fusion, key=fusion.get, reverse=True)[:3]   <span class="c"># → 
               <li><span>Score</span><div>Compute per-token log-probabilities under the target model.</div></li>
               <li><span>Select</span><div>Keep the k% lowest-probability tokens.</div></li>
               <li><span>Aggregate</span><div>Average their log-probabilities into one score per passage.</div></li>
-              <li><span>Evaluate</span><div>Sweep the threshold on WikiMIA member / non-member splits.</div></li>
+              <li><span>Evaluate</span><div>Sweep the threshold on WikiMIA member / non-member splits; report AUC and TPR.</div></li>
+              <li><span>Compare</span><div>Benchmark against perplexity, zlib and reference-model baselines on two Pythia models.</div></li>
             </ol>
-            <ul class="tags" aria-label="Technologies"><li>Python</li><li>WikiMIA</li><li>LLM evaluation</li></ul>
+            <dl class="stats stats-3" aria-label="Experiment setup">
+              <div><dt>542</dt><dd>WikiMIA examples, member and non-member</dd></div>
+              <div><dt>2</dt><dd>Pythia models scored token by token</dd></div>
+              <div><dt>3</dt><dd>baselines: perplexity, zlib, reference model</dd></div>
+            </dl>
+            <ul class="tags" aria-label="Technologies"><li>Python</li><li>NumPy</li><li>pandas</li><li>Pythia</li><li>WikiMIA</li><li>LLM evaluation</li></ul>
           </article>
           <!-- DEEPT -->
           <article class="project" id="deept">
@@ -581,17 +760,43 @@ best = sorted(fusion, key=fusion.get, reverse=True)[:3]   <span class="c"># → 
               I compared XceptionNet and EfficientNet as backbones, selected XceptionNet, and hardened it with
               adversarial training using the Fast Gradient Sign Method.
             </p>
+            <dl class="stats" aria-label="DEEPT outcomes">
+              <div><dt>+40%</dt><dd>detection accuracy over the project baseline</dd></div>
+              <div><dt>Patent</dt><dd>Korean patent for the detection system</dd></div>
+              <div><dt>3 awards</dt><dd>2 grand prizes and a 1st place, 2020</dd></div>
+              <div><dt>SBS</dt><dd>technical collaboration on a deepfake episode</dd></div>
+            </dl>
             <div class="equation" role="math" aria-label="x adversarial equals x plus epsilon times the sign of the gradient of the loss with respect to x">
               <span>x<sub>adv</sub> = x + ε · sign(∇<sub>x</sub> J(θ, x, y))</span>
               <small>FGSM: one-step perturbation in the direction that most increases the loss; mixed into training batches.</small>
             </div>
-            <ol class="flow" aria-label="DEEPT method">
-              <li><b>Compare</b><span>Xception vs. EfficientNet</span></li>
-              <li><b>Select</b><span>XceptionNet</span></li>
-              <li><b>Perturb</b><span>FGSM samples</span></li>
-              <li><b>Retrain</b><span>clean + adversarial</span></li>
-            </ol>
-            <p class="result"><span>Result</span> +40% detection accuracy over the project baseline.</p>
+            <figure class="diagram">
+              <svg viewBox="0 0 800 250" role="img" aria-labelledby="fig3-t fig3-d">
+                <title id="fig3-t">DEEPT adversarial training and serving</title>
+                <desc id="fig3-d">Training frames are perturbed with FGSM and mixed with clean frames into each batch. The batch trains XceptionNet, selected over EfficientNet, which outputs real or fake. Verdicts are served in a Django web player backed by AWS S3.</desc>
+                <defs>
+                  <marker id="arr3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                    <path d="M0 0 L10 5 L0 10 z" class="d-head" />
+                  </marker>
+                </defs>
+                <g class="d-box"><rect x="10" y="80" width="140" height="58" /><text x="22" y="102" class="d-k">FRAMES</text><text x="22" y="124">x, label y</text></g>
+                <g class="d-box d-acc"><rect x="170" y="80" width="140" height="58" /><text x="182" y="102" class="d-k">FGSM</text><text x="182" y="124">x+ε·sign(∇J)</text></g>
+                <g class="d-box"><rect x="330" y="80" width="140" height="58" /><text x="342" y="102" class="d-k">MIXED BATCH</text><text x="342" y="124">clean + adv</text></g>
+                <g class="d-box"><rect x="490" y="80" width="140" height="58" /><text x="502" y="102" class="d-k">XCEPTIONNET</text><text x="502" y="124">chosen model</text></g>
+                <g class="d-box"><rect x="650" y="80" width="140" height="58" /><text x="662" y="102" class="d-k">VERDICT</text><text x="662" y="124">real / fake</text></g>
+                <g class="d-box d-opt"><rect x="490" y="180" width="300" height="58" /><text x="502" y="202" class="d-k">WEB PLAYER</text><text x="502" y="224">Django · AWS S3 · verdict on video</text></g>
+                <path d="M80 80 V40 H400 V78" class="d-edge" fill="none" marker-end="url(#arr3)" />
+                <line x1="150" y1="109" x2="168" y2="109" class="d-edge" marker-end="url(#arr3)" />
+                <line x1="310" y1="109" x2="328" y2="109" class="d-edge" marker-end="url(#arr3)" />
+                <line x1="470" y1="109" x2="488" y2="109" class="d-edge" marker-end="url(#arr3)" />
+                <line x1="630" y1="109" x2="648" y2="109" class="d-edge" marker-end="url(#arr3)" />
+                <line x1="720" y1="138" x2="720" y2="178" class="d-edge" marker-end="url(#arr3)" />
+                <text x="92" y="32" class="d-note">clean copy</text>
+                <text x="502" y="160" class="d-note">vs. EfficientNet</text>
+                <text x="478" y="232" class="d-note" text-anchor="end">serving (my part) →</text>
+              </svg>
+              <figcaption><span>Fig. 3</span> Adversarial training: each batch mixes clean frames with their FGSM-perturbed copies, so the detector learns to hold its verdict under attack.</figcaption>
+            </figure>
             <p>
               My part: researching adversarial-example attacks, implementing the EfficientNet candidate, and
               leading the web service, which served verdicts as an annotated video player backed by AWS S3.
@@ -613,7 +818,7 @@ best = sorted(fusion, key=fusion.get, reverse=True)[:3]   <span class="c"># → 
       <!-- ───────────────────────── 04 Stack ───────────────────────── -->
       <section class="block wrap" id="stack" aria-labelledby="stack-title">
         <header class="block-head">
-          <span class="block-no">04</span>
+          <span class="block-no">05</span>
           <h2 id="stack-title">Stack</h2>
           <p class="block-note">Listed with where each was actually used.</p>
         </header>
@@ -629,8 +834,10 @@ best = sorted(fusion, key=fusion.get, reverse=True)[:3]   <span class="c"># → 
                 <tr><th scope="row">Data</th><td>SQLite, Selenium pipelines, preprocessing</td><td>CampusLoop · Sundo Soft</td></tr>
                 <tr><th scope="row">Retrieval</th><td>BM25, dense embeddings, reciprocal rank fusion, Ollama</td><td>CampusLoop</td></tr>
                 <tr><th scope="row">Routing &amp; geo</th><td>Dijkstra, OpenStreetMap graphs, spatial grids, openrouteservice</td><td>Doorstep</td></tr>
-                <tr><th scope="row">Machine learning</th><td>PyTorch, TensorFlow/Keras, CNNs, BiLSTM, adversarial training</td><td>DEEPT · Sundo Soft · USC</td></tr>
-                <tr><th scope="row">Reliability</th><td>Scenario-based testing, log analysis, root-cause analysis, Jenkins</td><td>NAVER CLOUD</td></tr>
+                <tr><th scope="row">Machine learning</th><td>PyTorch, TensorFlow/Keras, scikit-learn; CNNs, BiLSTM, GANs, PCA; adversarial training</td><td>DEEPT · Sundo Soft · USC · coursework</td></tr>
+                <tr><th scope="row">NLP &amp; LLMs</th><td>Korean tokenizers (Mecab, SOYNLP), embeddings, RAG, Ollama, token log-probability analysis</td><td>Sundo Soft · CampusLoop · Min-K%</td></tr>
+                <tr><th scope="row">Infrastructure</th><td>Active-standby redundancy, active-active GSLB, zero-downtime deployment, OS end-of-life planning</td><td>NAVER CLOUD</td></tr>
+                <tr><th scope="row">Reliability &amp; security</th><td>Scenario-based testing, log analysis, root-cause analysis, Jenkins vulnerability scans, CCE/CVE</td><td>NAVER CLOUD</td></tr>
                 <tr><th scope="row">Automation</th><td>Claude Code, MCP tools, Jira, internal APIs</td><td>NAVER CLOUD</td></tr>
                 <tr><th scope="row">Platforms</th><td>Linux, Docker, Git; Cloudflare Workers &amp; D1; AWS, Azure, GCP, NCP</td><td>NAVER CLOUD · CampusLoop · Doorstep</td></tr>
               </tbody>
@@ -642,7 +849,7 @@ best = sorted(fusion, key=fusion.get, reverse=True)[:3]   <span class="c"># → 
       <!-- ───────────────────────── 05 Education ───────────────────────── -->
       <section class="block wrap" id="education" aria-labelledby="education-title">
         <header class="block-head">
-          <span class="block-no">05</span>
+          <span class="block-no">06</span>
           <h2 id="education-title">Education &amp; recognition</h2>
         </header>
         <div class="block-body">
@@ -678,8 +885,9 @@ best = sorted(fusion, key=fusion.get, reverse=True)[:3]   <span class="c"># → 
         <p class="footer-lead">Open to Summer 2027 software engineering internships.</p>
         <p>
           <a href="mailto:yelynyoo@usc.edu">yelynyoo@usc.edu</a> ·
+          <a href="https://github.com/yelynew" target="_blank" rel="noreferrer">GitHub</a> ·
           <a href="https://www.linkedin.com/in/yelyn-yoo/" target="_blank" rel="noreferrer">LinkedIn</a> ·
-          <a href="assets/Yelyn_Yoo_Resume.pdf" download>Résumé</a>
+          <a href="assets/Yelyn_Yoo_Resume.pdf" download>Résumé (PDF)</a>
         </p>
       </div>
       <p class="colophon">Hand-written HTML &amp; CSS. No framework, no tracking. Set in IBM Plex.</p>
