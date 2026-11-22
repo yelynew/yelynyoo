@@ -38,7 +38,7 @@
         "@type": "Person",
         "name": "Yelyn Yoo",
         "email": "mailto:yelynyoo@usc.edu",
-        "sameAs": ["https://www.linkedin.com/in/yelyn-yoo/"],
+        "sameAs": ["https://www.linkedin.com/in/yelyn-yoo/", "https://github.com/yelynew"],
         "alumniOf": [
           { "@type": "CollegeOrUniversity", "name": "Ewha Womans University" },
           { "@type": "CollegeOrUniversity", "name": "North Dakota State University" }
@@ -68,6 +68,7 @@
           <a href="#stack">Stack</a>
           <a href="#education">Education</a>
         </nav>
+        <a class="header-cv" href="assets/Yelyn_Yoo_Resume.pdf" download>Résumé ↓</a>
         <button class="theme-toggle" type="button" aria-label="Toggle color theme">
           <span class="theme-label">Theme</span>
         </button>
@@ -90,6 +91,15 @@
             M.S. Computer Science student at <strong>USC</strong>, working on retrieval, LLM grounding, and
             how to tell what a language model memorized.
           </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="assets/Yelyn_Yoo_Resume.pdf" download>
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M3 13h10" /></svg>
+              Download résumé <span class="btn-meta">PDF</span>
+            </a>
+            <a class="btn" href="https://github.com/yelynew" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a class="btn" href="https://www.linkedin.com/in/yelyn-yoo/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+            <a class="btn" href="mailto:yelynyoo@usc.edu">Email</a>
+          </div>
         </div>
 
         <dl class="spec">
@@ -102,8 +112,7 @@
             <dt>Contact</dt>
             <dd>
               <a href="mailto:yelynyoo@usc.edu">yelynyoo@usc.edu</a> ·
-              <a href="https://www.linkedin.com/in/yelyn-yoo/" target="_blank" rel="noreferrer">LinkedIn</a> ·
-              <a href="assets/Yelyn_Yoo_Resume.pdf" download>Résumé (PDF)</a>
+              <a href="https://github.com/yelynew" target="_blank" rel="noreferrer">github.com/yelynew</a>
             </dd>
           </div>
         </dl>
@@ -281,12 +290,38 @@
                 reusable AI-assisted workflow on internal APIs, using Claude Code with company-provided
                 MCP tools.
               </p>
-              <ol class="flow" aria-label="Application processing flow">
-                <li><b>Receive</b><span>application form</span></li>
-                <li><b>Validate</b><span>input checks</span></li>
-                <li><b>Populate</b><span>Jira fields</span></li>
-                <li><b>Synchronize</b><span>schedule</span></li>
-              </ol>
+              <figure class="diagram">
+                <svg viewBox="0 0 760 290" role="img" aria-labelledby="fig-a-t fig-a-d">
+                  <title id="fig-a-t">AI-assisted application workflow</title>
+                  <desc id="fig-a-d">An engineer runs a reusable Claude Code workflow on a WAF or Anti-DDoS application. Claude Code calls company-provided MCP tools, which reach internal APIs to validate inputs, populate Jira fields, and synchronize the schedule. Handling time drops from 20 to 30 minutes to 5 minutes.</desc>
+                  <defs>
+                    <marker id="arr-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                      <path d="M0 0 L10 5 L0 10 z" class="d-head" />
+                    </marker>
+                  </defs>
+                  <g class="d-box"><rect x="10" y="101" width="140" height="58" /><text x="22" y="123" class="d-k">APPLICATION</text><text x="22" y="145">WAF · Anti-DDoS</text></g>
+                  <g class="d-box d-acc"><rect x="190" y="101" width="160" height="58" /><text x="202" y="123" class="d-k">CLAUDE CODE</text><text x="202" y="145">reusable workflow</text></g>
+                  <g class="d-box"><rect x="385" y="101" width="150" height="58" /><text x="397" y="123" class="d-k">MCP TOOLS</text><text x="397" y="145">company-provided</text></g>
+                  <g class="d-box"><rect x="590" y="20" width="160" height="58" /><text x="602" y="42" class="d-k">VALIDATE</text><text x="602" y="64">inputs · API</text></g>
+                  <g class="d-box"><rect x="590" y="101" width="160" height="58" /><text x="602" y="123" class="d-k">JIRA</text><text x="602" y="145">populate fields</text></g>
+                  <g class="d-box"><rect x="590" y="182" width="160" height="58" /><text x="602" y="204" class="d-k">SCHEDULE</text><text x="602" y="226">synchronize</text></g>
+                  <line x1="150" y1="130" x2="188" y2="130" class="d-edge" marker-end="url(#arr-a)" />
+                  <line x1="350" y1="130" x2="383" y2="130" class="d-edge" marker-end="url(#arr-a)" />
+                  <path d="M535 130 H560 V49 H588" class="d-edge" fill="none" marker-end="url(#arr-a)" />
+                  <line x1="560" y1="130" x2="588" y2="130" class="d-edge" marker-end="url(#arr-a)" />
+                  <path d="M560 130 V211 H588" class="d-edge" fill="none" marker-end="url(#arr-a)" />
+                  <text x="202" y="182" class="d-note">run by an engineer</text>
+                  <text x="397" y="182" class="d-note">internal APIs</text>
+                  <!-- before / after -->
+                  <text x="10" y="266" class="d-note">BEFORE</text>
+                  <rect x="70" y="257" width="240" height="11" class="d-bar-before" />
+                  <text x="318" y="267" class="d-note">20–30 min</text>
+                  <text x="400" y="266" class="d-note">AFTER</text>
+                  <rect x="452" y="257" width="48" height="11" class="d-bar-after" />
+                  <text x="508" y="267" class="d-note d-strong">5 min · −75–83%</text>
+                </svg>
+                <figcaption><span>Fig. A</span> One reusable workflow replaces hand-filling three systems per application. Bars share a scale.</figcaption>
+              </figure>
               <p class="result"><span>Result</span> 20–30 min → 5 min per application, 300+ applications/yr.</p>
             </div>
 
@@ -661,17 +696,43 @@ best = sorted(fusion, key=fusion.get, reverse=True)[:3]   <span class="c"># → 
               I compared XceptionNet and EfficientNet as backbones, selected XceptionNet, and hardened it with
               adversarial training using the Fast Gradient Sign Method.
             </p>
+            <dl class="stats" aria-label="DEEPT outcomes">
+              <div><dt>+40%</dt><dd>detection accuracy over the project baseline</dd></div>
+              <div><dt>Patent</dt><dd>Korean patent for the detection system</dd></div>
+              <div><dt>3 awards</dt><dd>2 grand prizes and a 1st place, 2020</dd></div>
+              <div><dt>SBS</dt><dd>technical collaboration on a deepfake episode</dd></div>
+            </dl>
             <div class="equation" role="math" aria-label="x adversarial equals x plus epsilon times the sign of the gradient of the loss with respect to x">
               <span>x<sub>adv</sub> = x + ε · sign(∇<sub>x</sub> J(θ, x, y))</span>
               <small>FGSM: one-step perturbation in the direction that most increases the loss; mixed into training batches.</small>
             </div>
-            <ol class="flow" aria-label="DEEPT method">
-              <li><b>Compare</b><span>Xception vs. EfficientNet</span></li>
-              <li><b>Select</b><span>XceptionNet</span></li>
-              <li><b>Perturb</b><span>FGSM samples</span></li>
-              <li><b>Retrain</b><span>clean + adversarial</span></li>
-            </ol>
-            <p class="result"><span>Result</span> +40% detection accuracy over the project baseline.</p>
+            <figure class="diagram">
+              <svg viewBox="0 0 800 250" role="img" aria-labelledby="fig3-t fig3-d">
+                <title id="fig3-t">DEEPT adversarial training and serving</title>
+                <desc id="fig3-d">Training frames are perturbed with FGSM and mixed with clean frames into each batch. The batch trains XceptionNet, selected over EfficientNet, which outputs real or fake. Verdicts are served in a Django web player backed by AWS S3.</desc>
+                <defs>
+                  <marker id="arr3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                    <path d="M0 0 L10 5 L0 10 z" class="d-head" />
+                  </marker>
+                </defs>
+                <g class="d-box"><rect x="10" y="80" width="140" height="58" /><text x="22" y="102" class="d-k">FRAMES</text><text x="22" y="124">x, label y</text></g>
+                <g class="d-box d-acc"><rect x="170" y="80" width="140" height="58" /><text x="182" y="102" class="d-k">FGSM</text><text x="182" y="124">x+ε·sign(∇J)</text></g>
+                <g class="d-box"><rect x="330" y="80" width="140" height="58" /><text x="342" y="102" class="d-k">MIXED BATCH</text><text x="342" y="124">clean + adv</text></g>
+                <g class="d-box"><rect x="490" y="80" width="140" height="58" /><text x="502" y="102" class="d-k">XCEPTIONNET</text><text x="502" y="124">chosen model</text></g>
+                <g class="d-box"><rect x="650" y="80" width="140" height="58" /><text x="662" y="102" class="d-k">VERDICT</text><text x="662" y="124">real / fake</text></g>
+                <g class="d-box d-opt"><rect x="490" y="180" width="300" height="58" /><text x="502" y="202" class="d-k">WEB PLAYER</text><text x="502" y="224">Django · AWS S3 · verdict on video</text></g>
+                <path d="M80 80 V40 H400 V78" class="d-edge" fill="none" marker-end="url(#arr3)" />
+                <line x1="150" y1="109" x2="168" y2="109" class="d-edge" marker-end="url(#arr3)" />
+                <line x1="310" y1="109" x2="328" y2="109" class="d-edge" marker-end="url(#arr3)" />
+                <line x1="470" y1="109" x2="488" y2="109" class="d-edge" marker-end="url(#arr3)" />
+                <line x1="630" y1="109" x2="648" y2="109" class="d-edge" marker-end="url(#arr3)" />
+                <line x1="720" y1="138" x2="720" y2="178" class="d-edge" marker-end="url(#arr3)" />
+                <text x="92" y="32" class="d-note">clean copy</text>
+                <text x="502" y="160" class="d-note">vs. EfficientNet</text>
+                <text x="478" y="232" class="d-note" text-anchor="end">serving (my part) →</text>
+              </svg>
+              <figcaption><span>Fig. 3</span> Adversarial training: each batch mixes clean frames with their FGSM-perturbed copies, so the detector learns to hold its verdict under attack.</figcaption>
+            </figure>
             <p>
               My part: researching adversarial-example attacks, implementing the EfficientNet candidate, and
               leading the web service, which served verdicts as an annotated video player backed by AWS S3.
@@ -759,8 +820,9 @@ best = sorted(fusion, key=fusion.get, reverse=True)[:3]   <span class="c"># → 
         <p class="footer-lead">Open to Summer 2027 software engineering internships.</p>
         <p>
           <a href="mailto:yelynyoo@usc.edu">yelynyoo@usc.edu</a> ·
+          <a href="https://github.com/yelynew" target="_blank" rel="noreferrer">GitHub</a> ·
           <a href="https://www.linkedin.com/in/yelyn-yoo/" target="_blank" rel="noreferrer">LinkedIn</a> ·
-          <a href="assets/Yelyn_Yoo_Resume.pdf" download>Résumé</a>
+          <a href="assets/Yelyn_Yoo_Resume.pdf" download>Résumé (PDF)</a>
         </p>
       </div>
       <p class="colophon">Hand-written HTML &amp; CSS. No framework, no tracking. Set in IBM Plex.</p>
