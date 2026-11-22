@@ -127,8 +127,8 @@
               <tbody>
                 <tr>
                   <th scope="row">
-                    WAF / Anti-DDoS block-mode switch requests
-                    <small>detect → block request intake: validation, Jira, schedule</small>
+                    WAF / Anti-DDoS service applications
+                    <small>internal processing of application forms: validation, Jira, schedule</small>
                   </th>
                   <td class="num">300+</td>
                   <td>
@@ -141,8 +141,8 @@
                 </tr>
                 <tr>
                   <th scope="row">
-                    Approved switches, after 30-day observation
-                    <small>change request + schedule generation</small>
+                    Detect → block mode switches
+                    <small>after 30-day observation: change request + schedule</small>
                   </th>
                   <td class="num">100+</td>
                   <td>
@@ -166,8 +166,9 @@
             </table>
           </div>
           <p class="footnote">
-            <span class="mono">≈ 75–125 h/yr</span> recovered on switch-request intake alone
-            (300 cases × 15–25 min saved). Manual steps after approval went from five to zero or one.
+            <span class="mono">≈ 75–125 h/yr</span> recovered on application processing alone
+            (300 cases × 15–25 min saved). Manual steps in each detect → block switch went from five to
+            zero or one.
           </p>
         </div>
       </section>
@@ -193,31 +194,31 @@
             </p>
 
             <div class="case">
-              <h4><span class="case-id">A</span> Detect → block switch requests (WAF / Anti-DDoS)</h4>
+              <h4><span class="case-id">A</span> Processing WAF / Anti-DDoS service applications</h4>
               <p>
-                WAF and Anti-DDoS policies start in detection mode; moving one to blocking mode starts
-                with a switch request. Each request needed its inputs checked, a Jira ticket filled field
-                by field, and the switch put on the operations schedule. I rebuilt this intake as a
+                Customers sign up for WAF and Anti-DDoS through an application form, which is then
+                processed internally: the form's inputs checked, a Jira ticket filled field by field, and
+                the work put on the operations schedule. I automated part of this processing as a
                 reusable AI-assisted workflow on internal APIs, using Claude Code with company-provided
                 MCP tools.
               </p>
-              <ol class="flow" aria-label="Switch request intake flow">
-                <li><b>Request</b><span>detect → block</span></li>
+              <ol class="flow" aria-label="Application processing flow">
+                <li><b>Receive</b><span>application form</span></li>
                 <li><b>Validate</b><span>input checks</span></li>
                 <li><b>Populate</b><span>Jira fields</span></li>
-                <li><b>Schedule</b><span>switch window</span></li>
+                <li><b>Synchronize</b><span>schedule</span></li>
               </ol>
-              <p class="result"><span>Result</span> 20–30 min → 5 min per request, 300+ requests/yr.</p>
+              <p class="result"><span>Result</span> 20–30 min → 5 min per application, 300+ applications/yr.</p>
             </div>
 
             <div class="case">
-              <h4><span class="case-id">B</span> Executing approved switches</h4>
+              <h4><span class="case-id">B</span> Detect → block mode switches</h4>
               <p>
-                A switch is approved only after the policy has run in detection mode for a 30-day
-                observation period. After approval, five manual steps produced the change request and
-                its schedule. A rules-based workflow now generates both.
+                New policies run in detection mode for a 30-day observation period before they switch to
+                blocking mode. After approval, five manual steps produced the change request and its
+                schedule. A rules-based workflow now generates both.
               </p>
-              <ol class="flow" aria-label="Approved switch flow">
+              <ol class="flow" aria-label="Detect to block switch flow">
                 <li><b>Detect</b><span>policy observes</span></li>
                 <li><b>Observe</b><span>30 days</span></li>
                 <li><b>Approve</b><span>rules check</span></li>
