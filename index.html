@@ -217,7 +217,7 @@
                 </tr>
                 <tr>
                   <th scope="row">Korean tourism-review classification<small><a href="#experience">Sundo Soft</a> · 2021</small></th>
-                  <td>BiLSTM (TensorFlow/Keras); preprocessing techniques compared</td>
+                  <td>BiLSTM (Keras); Mecab, custom-dictionary Mecab and SOYNLP tokenizers compared</td>
                   <td>Accuracy vs. project baseline on a Selenium-collected dataset</td>
                   <td class="num delta">+15%</td>
                 </tr>
@@ -246,7 +246,7 @@
             </div>
             <div>
               <dt>Data work included</dt>
-              <dd>Built the Selenium pipeline that collected the review dataset, and compared preprocessing techniques before tuning the model.</dd>
+              <dd>Collected the review dataset with Selenium and compared Korean tokenizers before tuning the model.</dd>
             </div>
           </dl>
         </div>
@@ -355,7 +355,8 @@
             <p>
               Built a Selenium pipeline that collected tourism reviews at scale and turned them into an
               NLP dataset, then trained a BiLSTM classifier in TensorFlow/Keras. Comparing preprocessing
-              variants against a fixed model was where most of the gain came from:
+              variants against a fixed model, including Korean tokenizers (Mecab, Mecab with a custom
+              dictionary, SOYNLP), was where most of the gain came from:
               <strong>+15% accuracy</strong> over the project baseline.
             </p>
             <ul class="tags" aria-label="Technologies">
@@ -709,7 +710,7 @@ best = sorted(fusion, key=fusion.get, reverse=True)[:3]   <span class="c"># → 
                 <tr><th scope="row">Retrieval</th><td>BM25, dense embeddings, reciprocal rank fusion, Ollama</td><td>CampusLoop</td></tr>
                 <tr><th scope="row">Routing &amp; geo</th><td>Dijkstra, OpenStreetMap graphs, spatial grids, openrouteservice</td><td>Doorstep</td></tr>
                 <tr><th scope="row">Machine learning</th><td>PyTorch, TensorFlow/Keras, scikit-learn; CNNs, BiLSTM, GANs, PCA; adversarial training</td><td>DEEPT · Sundo Soft · USC · coursework</td></tr>
-                <tr><th scope="row">NLP &amp; LLMs</th><td>Text classification, embeddings, RAG, Ollama, token log-probability analysis</td><td>Sundo Soft · CampusLoop · Min-K%</td></tr>
+                <tr><th scope="row">NLP &amp; LLMs</th><td>Korean tokenizers (Mecab, SOYNLP), embeddings, RAG, Ollama, token log-probability analysis</td><td>Sundo Soft · CampusLoop · Min-K%</td></tr>
                 <tr><th scope="row">Reliability</th><td>Scenario-based testing, log analysis, root-cause analysis, Jenkins</td><td>NAVER CLOUD</td></tr>
                 <tr><th scope="row">Automation</th><td>Claude Code, MCP tools, Jira, internal APIs</td><td>NAVER CLOUD</td></tr>
                 <tr><th scope="row">Platforms</th><td>Linux, Docker, Git; Cloudflare Workers &amp; D1; AWS, Azure, GCP, NCP</td><td>NAVER CLOUD · CampusLoop · Doorstep</td></tr>
