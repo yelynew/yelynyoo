@@ -1018,6 +1018,10 @@ td:last-child {
   border-bottom: 1px solid var(--rule);
 }
 
+.stats-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .stats > div {
   padding: 16px 16px 16px 0;
 }
@@ -1230,6 +1234,16 @@ td:last-child {
 
   .stats > div:nth-child(n + 3) {
     border-top: 1px solid var(--rule);
+  }
+
+  .stats.stats-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .stats.stats-3 > div:nth-child(3) {
+    padding-left: 12px;
+    border-left: 1px solid var(--rule);
+    border-top: 0;
   }
 
   .btn {

@@ -86,7 +86,7 @@
           <p class="lede">
             Four years on cloud security services at <strong>NAVER CLOUD</strong>, building
             Python tooling and API-driven workflows for WAF, Anti-DDoS, IDS/IPS and Anti-Virus
-            services used by 1,000+ enterprise customers. I've trained and evaluated vision and NLP models
+            services used by 1,000+ enterprise customers and $8M+ in annual revenue. I've trained and evaluated vision and NLP models
             since 2020, from adversarially trained deepfake detectors to BiLSTM text classifiers. Now an
             M.S. Computer Science student at <strong>USC</strong>, working on retrieval, LLM grounding, and
             how to tell what a language model memorized.
@@ -209,7 +209,7 @@
                 <tr>
                   <th scope="row">Was this text in an LLM's pretraining data?<small><a href="#mink">Min-K% Prob</a> · USC, 2026</small></th>
                   <td>Mean log-likelihood of the k% least likely tokens as a membership score</td>
-                  <td>WikiMIA member / non-member splits, threshold sweep</td>
+                  <td>AUC / TPR on 542 WikiMIA examples, two Pythia models, vs. perplexity, zlib and reference-model baselines</td>
                   <td class="num muted">in progress</td>
                 </tr>
                 <tr>
@@ -276,13 +276,34 @@
               <p class="meta">Jan 2022 – Sep 2026 · Gyeonggi-do, Korea</p>
             </header>
             <p>
-              Worked across the operational side of the security products: request handling, customer-facing
-              API behavior, and the tooling QA used to verify detections. Most of the work was finding
-              the repetitive or failure-prone step and replacing it with something testable.
+              Worked across the security product line (WAF, Anti-DDoS, IDS/IPS, Anti-Virus), which serves
+              1,000+ enterprise customers and $8M+ in annual revenue: service architecture, request handling,
+              customer-facing API behavior, and the tooling QA used to verify detections. Most of the work was
+              finding the repetitive or failure-prone step and replacing it with something testable.
             </p>
 
             <div class="case">
-              <h4><span class="case-id">A</span> Processing WAF / Anti-DDoS service applications</h4>
+              <h4><span class="case-id">A</span> Service redundancy and reliability</h4>
+              <p>
+                Designed how the five security services stay up through failures and deployments, and kept
+                their code and servers under regular vulnerability checks.
+              </p>
+              <div class="table-scroll">
+                <table class="spec-table">
+                  <thead><tr><th scope="col">Area</th><th scope="col">What I did</th></tr></thead>
+                  <tbody>
+                    <tr><td>Server redundancy</td><td>Active-standby redundancy for WAF, Anti-Virus, IPS, IDS and Anti-DDoS</td></tr>
+                    <tr><td>Traffic</td><td>Active-active GSLB, supporting zero-downtime deployments</td></tr>
+                    <tr><td>Lifecycle</td><td>OS end-of-life responses and hardware redundancy, planned with systems engineers</td></tr>
+                    <tr><td>Vulnerability checks</td><td>On-demand Jenkins vulnerability scans across 7 GitHub repositories; CCE/CVE assessments</td></tr>
+                    <tr><td>Releases</td><td>Supported selected Linux releases with internal tooling</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="case">
+              <h4><span class="case-id">B</span> Processing WAF / Anti-DDoS service applications</h4>
               <p>
                 Customers sign up for WAF and Anti-DDoS through an application form, which is then
                 processed internally: the form's inputs checked, a Jira ticket filled field by field, and
@@ -320,13 +341,13 @@
                   <rect x="452" y="257" width="48" height="11" class="d-bar-after" />
                   <text x="508" y="267" class="d-note d-strong">5 min · −75–83%</text>
                 </svg>
-                <figcaption><span>Fig. A</span> One reusable workflow replaces hand-filling three systems per application. Bars share a scale.</figcaption>
+                <figcaption><span>Fig. B</span> One reusable workflow replaces hand-filling three systems per application. Bars share a scale.</figcaption>
               </figure>
               <p class="result"><span>Result</span> 20–30 min → 5 min per application, 300+ applications/yr.</p>
             </div>
 
             <div class="case">
-              <h4><span class="case-id">B</span> Detect → block mode switches</h4>
+              <h4><span class="case-id">C</span> Detect → block mode switches</h4>
               <p>
                 New policies run in detection mode for a 30-day observation period before they switch to
                 blocking mode. After approval, five manual steps produced the change request and its
@@ -343,22 +364,24 @@
             </div>
 
             <div class="case">
-              <h4><span class="case-id">C</span> Debugging the event-generation QA tool</h4>
+              <h4><span class="case-id">D</span> Debugging the event-generation QA tool</h4>
               <p>
-                I built a local Python/Flask app that lets testers fire security events from a web form
-                and inspect the resulting service logs. One output did not match its input:
+                I built a local Python/Flask app, with AI assistance, that lets testers fire security events
+                from a web form and inspect the resulting service logs. One output did not match its input,
+                and the defect turned out to be in AI-generated code:
               </p>
               <ol class="steps">
                 <li><span>Reproduce</span><div>Held all inputs constant and varied one at a time until the mismatch was deterministic.</div></li>
                 <li><span>Trace</span><div>Followed the request through service logs and compared fields at each hop.</div></li>
-                <li><span>Root cause</span><div>The <code>port</code> parameter was silently discarded before the event was built.</div></li>
+                <li><span>Root cause</span><div>An AI-generated feature silently discarded the entered <code>port</code> value before the event was built.</div></li>
                 <li><span>Fix</span><div>Corrected the parameter handling in the generation logic.</div></li>
                 <li><span>Verify</span><div>Re-ran the controlled inputs and confirmed expected output end to end.</div></li>
               </ol>
+              <p class="result"><span>Takeaway</span> Generated code gets the same controlled tests and log checks as anything else before it ships.</p>
             </div>
 
             <div class="case">
-              <h4><span class="case-id">D</span> Failure behavior for IDS / IPS / Anti-Virus web requests</h4>
+              <h4><span class="case-id">E</span> Failure behavior for IDS / IPS / Anti-Virus web requests</h4>
               <p>
                 Defined the API requirements engineers implemented for these products — specifically
                 what happens when a request is malformed, unmappable, or fails downstream.
@@ -653,6 +676,12 @@ best = sorted(fusion, key=fusion.get, reverse=True)[:3]   <span class="c"># → 
                 </dd>
               </div>
             </dl>
+            <h4 class="sub">My part</h4>
+            <ul class="contrib">
+              <li><span>Backend</span><div>SQLite-backed ride data and JSON REST endpoints.</div></li>
+              <li><span>RAG assistant</span><div>Locally hosted Ollama / BM25 assistant with source-cited answers.</div></li>
+              <li><span>Features</span><div>Recurring rides and a demo mode, with tests.</div></li>
+            </ul>
             <p class="result"><span>Verification</span> 132 tests passing (v2.5.0), including concurrent-approval overbooking and idempotent retries.</p>
             <ul class="tags" aria-label="Technologies">
               <li>Python</li><li>JavaScript</li><li>SQLite</li><li>Docker Compose</li><li>Ollama</li><li>BM25</li><li>RRF</li>
@@ -670,7 +699,8 @@ best = sorted(fusion, key=fusion.get, reverse=True)[:3]   <span class="c"># → 
               Given a black-box language model and a passage, was the passage in its pretraining data?
               Min-K% Prob answers without the training corpus: text the model has seen rarely contains
               tokens it finds very surprising, so the mean log-likelihood of its <em>least</em> likely tokens
-              is a membership signal. I'm reproducing the method on the WikiMIA benchmark.
+              is a membership signal. I reproduced the method on 542 WikiMIA examples and benchmarked it against
+              three baselines across two Pythia models.
             </p>
             <div class="equation" role="math" aria-label="Min-K percent of x equals one over E times the sum over the k percent lowest-probability tokens of log p of x i given the preceding tokens">
               <span>Min-K%(x) = <sup>1</sup>⁄<sub>E</sub> Σ<sub>x<sub>i</sub> ∈ Min-K%(x)</sub> log p(x<sub>i</sub> | x<sub>1</sub>, …, x<sub>i−1</sub>)</span>
@@ -680,9 +710,15 @@ best = sorted(fusion, key=fusion.get, reverse=True)[:3]   <span class="c"># → 
               <li><span>Score</span><div>Compute per-token log-probabilities under the target model.</div></li>
               <li><span>Select</span><div>Keep the k% lowest-probability tokens.</div></li>
               <li><span>Aggregate</span><div>Average their log-probabilities into one score per passage.</div></li>
-              <li><span>Evaluate</span><div>Sweep the threshold on WikiMIA member / non-member splits.</div></li>
+              <li><span>Evaluate</span><div>Sweep the threshold on WikiMIA member / non-member splits; report AUC and TPR.</div></li>
+              <li><span>Compare</span><div>Benchmark against perplexity, zlib and reference-model baselines on two Pythia models.</div></li>
             </ol>
-            <ul class="tags" aria-label="Technologies"><li>Python</li><li>WikiMIA</li><li>LLM evaluation</li></ul>
+            <dl class="stats stats-3" aria-label="Experiment setup">
+              <div><dt>542</dt><dd>WikiMIA examples, member and non-member</dd></div>
+              <div><dt>2</dt><dd>Pythia models scored token by token</dd></div>
+              <div><dt>3</dt><dd>baselines: perplexity, zlib, reference model</dd></div>
+            </dl>
+            <ul class="tags" aria-label="Technologies"><li>Python</li><li>NumPy</li><li>pandas</li><li>Pythia</li><li>WikiMIA</li><li>LLM evaluation</li></ul>
           </article>
           <!-- DEEPT -->
           <article class="project" id="deept">
@@ -772,7 +808,8 @@ best = sorted(fusion, key=fusion.get, reverse=True)[:3]   <span class="c"># → 
                 <tr><th scope="row">Routing &amp; geo</th><td>Dijkstra, OpenStreetMap graphs, spatial grids, openrouteservice</td><td>Doorstep</td></tr>
                 <tr><th scope="row">Machine learning</th><td>PyTorch, TensorFlow/Keras, scikit-learn; CNNs, BiLSTM, GANs, PCA; adversarial training</td><td>DEEPT · Sundo Soft · USC · coursework</td></tr>
                 <tr><th scope="row">NLP &amp; LLMs</th><td>Korean tokenizers (Mecab, SOYNLP), embeddings, RAG, Ollama, token log-probability analysis</td><td>Sundo Soft · CampusLoop · Min-K%</td></tr>
-                <tr><th scope="row">Reliability</th><td>Scenario-based testing, log analysis, root-cause analysis, Jenkins</td><td>NAVER CLOUD</td></tr>
+                <tr><th scope="row">Infrastructure</th><td>Active-standby redundancy, active-active GSLB, zero-downtime deployment, OS end-of-life planning</td><td>NAVER CLOUD</td></tr>
+                <tr><th scope="row">Reliability &amp; security</th><td>Scenario-based testing, log analysis, root-cause analysis, Jenkins vulnerability scans, CCE/CVE</td><td>NAVER CLOUD</td></tr>
                 <tr><th scope="row">Automation</th><td>Claude Code, MCP tools, Jira, internal APIs</td><td>NAVER CLOUD</td></tr>
                 <tr><th scope="row">Platforms</th><td>Linux, Docker, Git; Cloudflare Workers &amp; D1; AWS, Azure, GCP, NCP</td><td>NAVER CLOUD · CampusLoop · Doorstep</td></tr>
               </tbody>
