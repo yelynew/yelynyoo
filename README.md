@@ -30,7 +30,7 @@ GitHub may take several minutes to publish a new site. The official setup guide 
 - Theme toggle and active-section nav: `script.js`
 - CampusLoop retrieval diagram: inline SVG in `index.html` (colors come from CSS variables, so it works in both themes)
 - Downloadable résumé: `assets/Yelyn_Yoo_Resume.pdf`
-- Installable web app: `manifest.webmanifest`, app icons in `assets/`, offline cache in `sw.js` (bump `CACHE` in `sw.js` after changing site files so returning visitors get the update)
+- Installable web app: `manifest.webmanifest`, app icons in `assets/`, offline cache in `sw.js` (after changing site files, bump the `?v=` on `styles.css` / `script.js` in `index.html` and `CACHE` in `sw.js`)
 - Browser icon: `assets/favicon.svg`
 
 ## Before publishing
