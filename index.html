@@ -79,10 +79,10 @@
         <div class="intro-text">
           <p class="kicker">Software Engineer · Los Angeles</p>
           <h1 id="intro-title">
-            I make operational systems smaller, safer, and easier to reason about.
+            Most of my best work has been deleting steps.
           </h1>
           <p class="lede">
-            Four years building on cloud security services at <strong>NAVER CLOUD</strong>, building
+            Four years on cloud security services at <strong>NAVER CLOUD</strong>, building
             Python tooling and API-driven workflows for WAF, Anti-DDoS, IDS/IPS and Anti-Virus
             services used by 1,000+ enterprise customers. Now an M.S. Computer Science student at
             <strong>USC</strong>, building routing and retrieval systems and studying how to evaluate language models.
@@ -127,8 +127,8 @@
               <tbody>
                 <tr>
                   <th scope="row">
-                    WAF / Anti-DDoS request processing
-                    <small>validation, Jira fields, schedule sync</small>
+                    WAF / Anti-DDoS block-mode switch requests
+                    <small>detect → block request intake: validation, Jira, schedule</small>
                   </th>
                   <td class="num">300+</td>
                   <td>
@@ -141,8 +141,8 @@
                 </tr>
                 <tr>
                   <th scope="row">
-                    Detection → blocking transition
-                    <small>post-approval change requests</small>
+                    Approved switches, after 30-day observation
+                    <small>change request + schedule generation</small>
                   </th>
                   <td class="num">100+</td>
                   <td>
@@ -166,9 +166,8 @@
             </table>
           </div>
           <p class="footnote">
-            <span class="mono">≈ 75–125 h/yr</span> recovered on request processing alone
-            (300 cases × 15–25 min saved). Manual steps in the detection→blocking flow went from
-            five to zero or one.
+            <span class="mono">≈ 75–125 h/yr</span> recovered on switch-request intake alone
+            (300 cases × 15–25 min saved). Manual steps after approval went from five to zero or one.
           </p>
         </div>
       </section>
@@ -194,36 +193,38 @@
             </p>
 
             <div class="case">
-              <h4><span class="case-id">A</span> Request-processing workflow</h4>
+              <h4><span class="case-id">A</span> Detect → block switch requests (WAF / Anti-DDoS)</h4>
               <p>
-                Each WAF / Anti-DDoS request needed its inputs checked, a Jira ticket filled field by
-                field, and an operations schedule updated. I rebuilt this as a reusable AI-assisted
-                workflow on internal APIs, using Claude Code with company-provided MCP tools.
+                WAF and Anti-DDoS policies start in detection mode; moving one to blocking mode starts
+                with a switch request. Each request needed its inputs checked, a Jira ticket filled field
+                by field, and the switch put on the operations schedule. I rebuilt this intake as a
+                reusable AI-assisted workflow on internal APIs, using Claude Code with company-provided
+                MCP tools.
               </p>
-              <ol class="flow" aria-label="Request processing flow">
-                <li><b>Request</b><span>customer ticket</span></li>
+              <ol class="flow" aria-label="Switch request intake flow">
+                <li><b>Request</b><span>detect → block</span></li>
                 <li><b>Validate</b><span>input checks</span></li>
                 <li><b>Populate</b><span>Jira fields</span></li>
-                <li><b>Synchronize</b><span>schedule</span></li>
+                <li><b>Schedule</b><span>switch window</span></li>
               </ol>
-              <p class="result"><span>Result</span> 20–30 min → 5 min per case, 300+ cases/yr.</p>
+              <p class="result"><span>Result</span> 20–30 min → 5 min per request, 300+ requests/yr.</p>
             </div>
 
             <div class="case">
-              <h4><span class="case-id">B</span> Detection → blocking transition</h4>
+              <h4><span class="case-id">B</span> Executing approved switches</h4>
               <p>
-                New policies run in detection mode for a 30-day observation period before blocking.
-                After approval, five manual steps produced the change request and schedule. A
-                rules-based workflow now generates both.
+                A switch is approved only after the policy has run in detection mode for a 30-day
+                observation period. After approval, five manual steps produced the change request and
+                its schedule. A rules-based workflow now generates both.
               </p>
-              <ol class="flow" aria-label="Detection to blocking flow">
+              <ol class="flow" aria-label="Approved switch flow">
                 <li><b>Detect</b><span>policy observes</span></li>
                 <li><b>Observe</b><span>30 days</span></li>
                 <li><b>Approve</b><span>rules check</span></li>
                 <li><b>Generate</b><span>CR + schedule</span></li>
                 <li><b>Block</b><span>enforced</span></li>
               </ol>
-              <p class="result"><span>Result</span> 10 min → 3 min; 5 manual steps → 0–1, 100+ transitions/yr.</p>
+              <p class="result"><span>Result</span> 10 min → 3 min; 5 manual steps → 0–1, 100+ switches/yr.</p>
             </div>
 
             <div class="case">
