@@ -35,9 +35,9 @@ systemDark.addEventListener?.("change", syncThemeUI);
 syncThemeUI();
 
 // Active section in nav
-const links = [...document.querySelectorAll('.site-nav a[href^="#"]')];
-const sections = links
-  .map((a) => document.querySelector(a.getAttribute("href")))
+const links = [...document.querySelectorAll('.site-nav a[href^="#"], .tabbar a[href^="#"]')];
+const sections = [...new Set(links.map((a) => a.getAttribute("href")))]
+  .map((href) => document.querySelector(href))
   .filter(Boolean);
 
 if ("IntersectionObserver" in window && sections.length) {
@@ -52,4 +52,13 @@ if ("IntersectionObserver" in window && sections.length) {
     { rootMargin: "-35% 0px -60% 0px" }
   );
   sections.forEach((s) => observer.observe(s));
+}
+
+// Installable web app: cache the site for offline use (HTTPS or localhost only).
+if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").catch(() => {
+      /* offline support is optional */
+    });
+  });
 }

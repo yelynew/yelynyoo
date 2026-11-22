@@ -225,6 +225,11 @@ li code {
   border-color: var(--fg-3);
 }
 
+/* mobile tab bar (shown under 720px) */
+.tabbar {
+  display: none;
+}
+
 /* ── Intro ────────────────────────────────────────────────────── */
 
 .intro {
@@ -1211,16 +1216,100 @@ td:last-child {
     font-size: 16px;
   }
 
-  .header-row {
-    height: auto;
-    flex-wrap: wrap;
-    row-gap: 4px;
-    padding-top: 10px;
-    padding-bottom: 8px;
+  /* app shell: compact top bar, bottom tab bar */
+  .site-header {
+    padding-top: env(safe-area-inset-top);
   }
 
+  .header-row {
+    height: 52px;
+  }
+
+  .site-nav,
   .header-cv {
+    display: none;
+  }
+
+  .theme-toggle {
     margin-left: auto;
+  }
+
+  .tabbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 6;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 0 max(8px, env(safe-area-inset-right)) env(safe-area-inset-bottom) max(8px, env(safe-area-inset-left));
+    background: var(--bg);
+    border-top: 1px solid var(--rule-strong);
+  }
+
+  .tabbar a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    min-height: 58px;
+    font: 500 11px/1 var(--mono);
+    letter-spacing: 0.02em;
+    color: var(--fg-3);
+    text-decoration: none;
+    position: relative;
+  }
+
+  .tabbar svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .tabbar a.active {
+    color: var(--fg);
+  }
+
+  .tabbar a.active::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 22%;
+    right: 22%;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  .tabbar .tab-cv {
+    color: var(--accent);
+  }
+
+  body {
+    padding-bottom: calc(60px + env(safe-area-inset-bottom));
+  }
+
+  .site-footer {
+    padding-bottom: 32px;
+  }
+
+  /* wide diagrams scroll sideways; say so */
+  .diagram {
+    position: relative;
+  }
+
+  .diagram::before {
+    content: "Swipe to see the whole diagram →";
+    position: sticky;
+    left: 0;
+    display: block;
+    margin-bottom: 8px;
+    font: 11.5px var(--mono);
+    color: var(--fg-3);
   }
 
   .stats {
@@ -1264,7 +1353,7 @@ td:last-child {
   }
 
   html {
-    scroll-padding-top: 96px;
+    scroll-padding-top: 68px;
   }
 
   .lede {
@@ -1317,6 +1406,41 @@ td:last-child {
 
   .equation > span {
     font-size: 17px;
+  }
+
+  .code {
+    font-size: 12px;
+    padding: 14px 16px;
+  }
+
+  .proj-index thead {
+    display: none;
+  }
+
+  .proj-index tr {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr) auto;
+    column-gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .proj-index th,
+  .proj-index td {
+    border: 0;
+    padding: 0;
+  }
+
+  .proj-index td:nth-of-type(2) {
+    grid-column: 2 / -1;
+    grid-row: 2;
+    font-size: 14.5px;
+    margin-top: 2px;
+  }
+
+  .proj-index td.num {
+    grid-column: 3;
+    grid-row: 1;
   }
 
   .ml {
