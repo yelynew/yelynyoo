@@ -62,6 +62,7 @@
         <a class="wordmark" href="#top">Yelyn Yoo</a>
         <nav class="site-nav" aria-label="Sections">
           <a href="#impact">Impact</a>
+          <a href="#ml">ML</a>
           <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
           <a href="#stack">Stack</a>
@@ -77,15 +78,17 @@
       <!-- ───────────────────────── Intro ───────────────────────── -->
       <section class="intro wrap" id="top" aria-labelledby="intro-title">
         <div class="intro-text">
-          <p class="kicker">Software Engineer · Los Angeles</p>
+          <p class="kicker">Software Engineer · Machine Learning · Los Angeles</p>
           <h1 id="intro-title">
             Most of my best work has been deleting steps.
           </h1>
           <p class="lede">
             Four years on cloud security services at <strong>NAVER CLOUD</strong>, building
             Python tooling and API-driven workflows for WAF, Anti-DDoS, IDS/IPS and Anti-Virus
-            services used by 1,000+ enterprise customers. Now an M.S. Computer Science student at
-            <strong>USC</strong>, building routing and retrieval systems and studying how to evaluate language models.
+            services used by 1,000+ enterprise customers. I've trained and evaluated vision and NLP models
+            since 2020, from adversarially trained deepfake detectors to BiLSTM text classifiers. Now an
+            M.S. Computer Science student at <strong>USC</strong>, working on retrieval, LLM grounding, and
+            how to tell what a language model memorized.
           </p>
         </div>
 
@@ -93,7 +96,8 @@
           <div><dt>Now</dt><dd>M.S. Computer Science, USC · exp. May 2028</dd></div>
           <div><dt>Previously</dt><dd>Cloud Security Architect, NAVER CLOUD · 2022–2026</dd></div>
           <div><dt>Seeking</dt><dd>SWE internship · May–Aug 2027 (12 weeks)</dd></div>
-          <div><dt>Primary</dt><dd>Python · SQL · REST APIs · PyTorch · Linux</dd></div>
+          <div><dt>Engineering</dt><dd>Python · SQL · REST APIs · Linux · Docker</dd></div>
+          <div><dt>ML</dt><dd>PyTorch · Keras · scikit-learn · RAG · LLM evaluation</dd></div>
           <div>
             <dt>Contact</dt>
             <dd>
@@ -173,10 +177,85 @@
         </div>
       </section>
 
-      <!-- ───────────────────────── 02 Experience ───────────────────────── -->
-      <section class="block wrap" id="experience" aria-labelledby="experience-title">
+      <!-- ───────────────────────── 02 Machine learning ───────────────────────── -->
+      <section class="block wrap" id="ml" aria-labelledby="ml-title">
         <header class="block-head">
           <span class="block-no">02</span>
+          <h2 id="ml-title">Machine learning</h2>
+          <p class="block-note">Models I've built, each with how it was measured. Details in Projects and Experience.</p>
+        </header>
+
+        <div class="block-body">
+          <div class="table-scroll">
+            <table class="ml">
+              <thead>
+                <tr>
+                  <th scope="col">Problem</th>
+                  <th scope="col">Method</th>
+                  <th scope="col">Evaluation</th>
+                  <th scope="col" class="num">Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Was this text in an LLM's pretraining data?<small><a href="#mink">Min-K% Prob</a> · USC, 2026</small></th>
+                  <td>Mean log-likelihood of the k% least likely tokens as a membership score</td>
+                  <td>WikiMIA member / non-member splits, threshold sweep</td>
+                  <td class="num muted">in progress</td>
+                </tr>
+                <tr>
+                  <th scope="row">Grounded answers from a local LLM<small><a href="#campusloop">CampusLoop</a> · 2026</small></th>
+                  <td>BM25 + nomic-embed re-rank, reciprocal rank fusion, qwen2.5 with citations</td>
+                  <td>Top-3 cited sources; falls back to lexical-only or sources-only</td>
+                  <td class="num">132 tests</td>
+                </tr>
+                <tr>
+                  <th scope="row">Deepfake detection under adversarial input<small><a href="#deept">DEEPT</a> · 2020</small></th>
+                  <td>XceptionNet vs. EfficientNet backbones; FGSM adversarial training</td>
+                  <td>Detection accuracy vs. project baseline</td>
+                  <td class="num delta">+40%</td>
+                </tr>
+                <tr>
+                  <th scope="row">Korean tourism-review classification<small><a href="#experience">Sundo Soft</a> · 2021</small></th>
+                  <td>BiLSTM (Keras); Mecab, custom-dictionary Mecab and SOYNLP tokenizers compared</td>
+                  <td>Accuracy vs. project baseline on a Selenium-collected dataset</td>
+                  <td class="num delta">+15%</td>
+                </tr>
+                <tr>
+                  <th scope="row">Biometric recognition and template protection<small><a href="https://github.com/yelynew/Biological-authentication-security-and-machine-learning" target="_blank" rel="noreferrer">notebooks ↗</a> · 2021</small></th>
+                  <td>PCA eigenfaces and eigen-iris; fingerprint minutiae; fuzzy vault</td>
+                  <td>Identification accuracy; FAR / FRR for verification</td>
+                  <td class="num">92.7% face<br />96.3% iris</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <dl class="decisions themes">
+            <div>
+              <dt>Evaluation first</dt>
+              <dd>Results are stated against a baseline or a metric, not as impressions. Min-K% is a study of evaluation itself: measuring what a model memorized.</dd>
+            </div>
+            <div>
+              <dt>Adversarial by default</dt>
+              <dd>A security background shapes the ML: FGSM-hardened detectors, biometric false-accept rates, and model output treated as untrusted until checked.</dd>
+            </div>
+            <div>
+              <dt>Grounding over fluency</dt>
+              <dd>LLM features answer only from retrieved, cited sources and degrade to “here are the sources” rather than guessing.</dd>
+            </div>
+            <div>
+              <dt>Data work included</dt>
+              <dd>Collected the review dataset with Selenium and compared Korean tokenizers before tuning the model.</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ───────────────────────── 03 Experience ───────────────────────── -->
+      <section class="block wrap" id="experience" aria-labelledby="experience-title">
+        <header class="block-head">
+          <span class="block-no">03</span>
           <h2 id="experience-title">Experience</h2>
           <p class="block-note">Proprietary code is not shown. Diagrams describe structure, not internal systems.</p>
         </header>
@@ -276,7 +355,8 @@
             <p>
               Built a Selenium pipeline that collected tourism reviews at scale and turned them into an
               NLP dataset, then trained a BiLSTM classifier in TensorFlow/Keras. Comparing preprocessing
-              variants against a fixed model was where most of the gain came from:
+              variants against a fixed model, including Korean tokenizers (Mecab, Mecab with a custom
+              dictionary, SOYNLP), was where most of the gain came from:
               <strong>+15% accuracy</strong> over the project baseline.
             </p>
             <ul class="tags" aria-label="Technologies">
@@ -289,7 +369,7 @@
       <!-- ───────────────────────── 03 Projects ───────────────────────── -->
       <section class="block wrap" id="projects" aria-labelledby="projects-title">
         <header class="block-head">
-          <span class="block-no">03</span>
+          <span class="block-no">04</span>
           <h2 id="projects-title">Projects</h2>
           <p class="block-note">Short technical notes: problem, mechanism, evidence. Team projects say which part was mine.</p>
         </header>
@@ -613,7 +693,7 @@ best = sorted(fusion, key=fusion.get, reverse=True)[:3]   <span class="c"># → 
       <!-- ───────────────────────── 04 Stack ───────────────────────── -->
       <section class="block wrap" id="stack" aria-labelledby="stack-title">
         <header class="block-head">
-          <span class="block-no">04</span>
+          <span class="block-no">05</span>
           <h2 id="stack-title">Stack</h2>
           <p class="block-note">Listed with where each was actually used.</p>
         </header>
@@ -629,7 +709,8 @@ best = sorted(fusion, key=fusion.get, reverse=True)[:3]   <span class="c"># → 
                 <tr><th scope="row">Data</th><td>SQLite, Selenium pipelines, preprocessing</td><td>CampusLoop · Sundo Soft</td></tr>
                 <tr><th scope="row">Retrieval</th><td>BM25, dense embeddings, reciprocal rank fusion, Ollama</td><td>CampusLoop</td></tr>
                 <tr><th scope="row">Routing &amp; geo</th><td>Dijkstra, OpenStreetMap graphs, spatial grids, openrouteservice</td><td>Doorstep</td></tr>
-                <tr><th scope="row">Machine learning</th><td>PyTorch, TensorFlow/Keras, CNNs, BiLSTM, adversarial training</td><td>DEEPT · Sundo Soft · USC</td></tr>
+                <tr><th scope="row">Machine learning</th><td>PyTorch, TensorFlow/Keras, scikit-learn; CNNs, BiLSTM, GANs, PCA; adversarial training</td><td>DEEPT · Sundo Soft · USC · coursework</td></tr>
+                <tr><th scope="row">NLP &amp; LLMs</th><td>Korean tokenizers (Mecab, SOYNLP), embeddings, RAG, Ollama, token log-probability analysis</td><td>Sundo Soft · CampusLoop · Min-K%</td></tr>
                 <tr><th scope="row">Reliability</th><td>Scenario-based testing, log analysis, root-cause analysis, Jenkins</td><td>NAVER CLOUD</td></tr>
                 <tr><th scope="row">Automation</th><td>Claude Code, MCP tools, Jira, internal APIs</td><td>NAVER CLOUD</td></tr>
                 <tr><th scope="row">Platforms</th><td>Linux, Docker, Git; Cloudflare Workers &amp; D1; AWS, Azure, GCP, NCP</td><td>NAVER CLOUD · CampusLoop · Doorstep</td></tr>
@@ -642,7 +723,7 @@ best = sorted(fusion, key=fusion.get, reverse=True)[:3]   <span class="c"># → 
       <!-- ───────────────────────── 05 Education ───────────────────────── -->
       <section class="block wrap" id="education" aria-labelledby="education-title">
         <header class="block-head">
-          <span class="block-no">05</span>
+          <span class="block-no">06</span>
           <h2 id="education-title">Education &amp; recognition</h2>
         </header>
         <div class="block-body">

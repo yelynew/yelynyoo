@@ -408,6 +408,42 @@ td:last-child {
   font-weight: 500;
 }
 
+/* ML table */
+.ml {
+  min-width: 680px;
+}
+
+.ml tbody th {
+  width: 30%;
+}
+
+.ml td {
+  color: var(--fg-2);
+}
+
+.ml td.num {
+  color: var(--fg);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.ml td.delta {
+  color: var(--accent);
+}
+
+.ml td.muted {
+  color: var(--fg-3);
+  font-weight: 400;
+}
+
+.ml small a {
+  color: var(--fg-2);
+}
+
+.themes {
+  margin-top: 28px;
+}
+
 /* impact chart */
 .impact {
   min-width: 600px;
@@ -1127,6 +1163,51 @@ td:last-child {
 
   .equation > span {
     font-size: 17px;
+  }
+
+  .ml {
+    min-width: 0;
+  }
+
+  .ml thead {
+    display: none;
+  }
+
+  .ml tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .ml th,
+  .ml td {
+    border: 0;
+    padding: 0;
+  }
+
+  .ml tbody th {
+    width: auto;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .ml td.num {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .ml td:nth-of-type(1),
+  .ml td:nth-of-type(2) {
+    grid-column: 1 / -1;
+    font-size: 14.5px;
+    margin-top: 6px;
+  }
+
+  .ml td:nth-of-type(2) {
+    color: var(--fg-3);
+    margin-top: 2px;
   }
 
   .impact {
